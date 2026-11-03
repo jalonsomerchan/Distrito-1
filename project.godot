@@ -12,8 +12,8 @@ config_version=5
 
 config/name="Distrito 01"
 run/main_scene="res://scenes/main.tscn"
-run/max_fps=60
 config/features=PackedStringArray("4.7", "GL Compatibility")
+run/max_fps=60
 config/icon="res://assets/sprites/car.png"
 
 [display]
@@ -23,7 +23,6 @@ window/size/viewport_height=800
 window/size/window_width_override=1280
 window/size/window_height_override=800
 window/stretch/mode="canvas_items"
-window/stretch/aspect="keep"
 
 [physics]
 
@@ -34,4 +33,3 @@ window/stretch/aspect="keep"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.105, 0.13, 0.15, 1)
-textures/default_filters/use_nearest_mipmap_filter=false

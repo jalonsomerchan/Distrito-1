@@ -16,13 +16,15 @@ jobs:
     name: Compilar y publicar juego
     runs-on: ubuntu-latest
 
+    env:
+      GODOT_VERSION: "4.7.2"
+      GAME_EXECUTABLE: "MiJuego.x86_64"
+
     steps:
       - name: Descargar proyecto
         uses: actions/checkout@v4
 
       - name: Instalar Godot
-        env:
-          GODOT_VERSION: "4.7.2"
         run: |
           set -e
 
@@ -51,24 +53,90 @@ jobs:
 
           godot --version
 
+      - name: Detectar preset Linux
+        id: preset
+        run: |
+          set -e
+
+          PRESET=$(python3 - <<'PY'
+          import configparser
+          import sys
+
+          config = configparser.ConfigParser(
+              interpolation=None,
+              strict=False
+          )
+
+          files = config.read(
+              "export_presets.cfg",
+              encoding="utf-8"
+          )
+
+          if not files:
+              sys.exit("No existe export_presets.cfg")
+
+          candidates = []
+
+          for section in config.sections():
+              if not section.startswith("preset."):
+                  continue
+
+              if section.endswith(".options"):
+                  continue
+
+              platform = config.get(
+                  section, "platform", fallback=""
+              ).strip('"')
+
+              name = config.get(
+                  section, "name", fallback=""
+              ).strip('"')
+
+              if platform == "Linux":
+                  candidates.append(name)
+
+          if not candidates:
+              sys.exit("No se encontró ningún preset Linux")
+
+          # Priorizar presets específicos de Steam Deck
+          selected = next(
+              (
+                  name for name in candidates
+                  if "steam deck" in name.lower()
+              ),
+              candidates[0]
+          )
+
+          print(selected)
+          PY
+          )
+
+          echo "Preset detectado: $PRESET"
+          echo "name=$PRESET" >> "$GITHUB_OUTPUT"
+
       - name: Importar recursos del proyecto
         run: |
+          set -e
           godot --headless --path . --import
 
       - name: Exportar juego para Steam Deck
+        env:
+          EXPORT_PRESET: ${{ steps.preset.outputs.name }}
         run: |
           set -e
 
           mkdir -p build
 
+          echo "Exportando preset: $EXPORT_PRESET"
+
           godot --headless \
             --path . \
-            --export-release "Steam Deck (Linux)" \
-            build/MiJuego.x86_64
+            --export-release "$EXPORT_PRESET" \
+            "build/$GAME_EXECUTABLE"
 
-          test -s build/MiJuego.x86_64
+          test -s "build/$GAME_EXECUTABLE"
 
-          chmod +x build/MiJuego.x86_64
+          chmod +x "build/$GAME_EXECUTABLE"
 
           echo "Exportación completada:"
           ls -lah build/

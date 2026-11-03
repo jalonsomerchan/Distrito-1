@@ -55,50 +55,53 @@ jobs:
 
       - name: Detectar preset Linux
         id: preset
+        shell: bash
         run: |
           set -e
 
           PRESET=$(python3 - <<'PY'
-          import configparser
+          import re
           import sys
+          from pathlib import Path
 
-          config = configparser.ConfigParser(
-              interpolation=None,
-              strict=False
+          path = Path("export_presets.cfg")
+
+          if not path.is_file():
+              sys.exit("ERROR: No existe export_presets.cfg")
+
+          content = path.read_text(encoding="utf-8")
+
+          # Separar las secciones de presets principales
+          sections = re.split(
+              r'(?m)^\[(preset\.\d+)\]\s*$',
+              content
           )
-
-          files = config.read(
-              "export_presets.cfg",
-              encoding="utf-8"
-          )
-
-          if not files:
-              sys.exit("No existe export_presets.cfg")
 
           candidates = []
 
-          for section in config.sections():
-              if not section.startswith("preset."):
-                  continue
+          for i in range(1, len(sections), 2):
+              section = sections[i + 1]
 
-              if section.endswith(".options"):
-                  continue
+              platform = re.search(
+                  r'(?m)^platform="([^"]+)"',
+                  section
+              )
 
-              platform = config.get(
-                  section, "platform", fallback=""
-              ).strip('"')
+              name = re.search(
+                  r'(?m)^name="([^"]+)"',
+                  section
+              )
 
-              name = config.get(
-                  section, "name", fallback=""
-              ).strip('"')
-
-              if platform == "Linux":
-                  candidates.append(name)
+              if platform and name:
+                  if platform.group(1) == "Linux":
+                      candidates.append(name.group(1))
 
           if not candidates:
-              sys.exit("No se encontró ningún preset Linux")
+              sys.exit(
+                  "ERROR: No se encontró ningún preset Linux"
+              )
 
-          # Priorizar presets específicos de Steam Deck
+          # Priorizar el preset de Steam Deck
           selected = next(
               (
                   name for name in candidates
@@ -117,6 +120,7 @@ jobs:
       - name: Importar recursos del proyecto
         run: |
           set -e
+
           godot --headless --path . --import
 
       - name: Exportar juego para Steam Deck

@@ -21,11 +21,12 @@ func _ready() -> void:
 	forests = data.forests
 	trails = data.trails
 	vegetation = data.vegetation
-	for ocean in data.oceans:
-		var rect: Rect2 = city.as_rect(ocean.rect)
-		oceans.append(rect)
-		city.add_tiled(city.nature.water, rect, 1)
-		city.add_collider(rect)
+	if city.profile.get("coastal", true):
+		for ocean in data.oceans:
+			var rect: Rect2 = city.as_rect(ocean.rect)
+			oceans.append(rect)
+			city.add_tiled(city.nature.water, rect, 1)
+			city.add_collider(rect)
 	build_indices()
 	build_ground()
 
@@ -165,8 +166,9 @@ func _process(_delta: float) -> void:
 	if game != null and game.car != null: refresh(game.car.position)
 
 func district_at(at: Vector2) -> String:
-	for beach in data.beaches:
-		if city.as_rect(beach.rect).has_point(at): return beach.name
+	if city.profile.get("coastal", true):
+		for beach in data.beaches:
+			if city.as_rect(beach.rect).has_point(at): return beach.name
 	for forest in forests:
 		if city.as_rect(forest.rect).has_point(at): return forest.name
 	return "CAMPIÑA" if not city.URBAN_BOUNDS.has_point(at) else ""

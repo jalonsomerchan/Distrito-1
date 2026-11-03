@@ -1,6 +1,6 @@
 extends Node2D
 
-const LAYOUT_VERSION := 5
+const LAYOUT_VERSION := 6
 const Wilderness = preload("res://scripts/wilderness.gd")
 const Details = preload("res://scripts/city_details.gd")
 const URBAN_BOUNDS := Rect2(-400, -400, 14800, 13200)
@@ -10,6 +10,8 @@ const BUILDING_GAP := 60.0
 const WALL_THICKNESS := 160.0
 
 var game: Node2D
+var city_id := "barcelona"
+var profile: Dictionary = {}
 var details: Node2D
 var wilderness: Node2D
 var beach_names: Array[String] = []
@@ -37,12 +39,18 @@ func as_rect(data: Array) -> Rect2:
 	return Rect2(float(data[0]), float(data[1]), float(data[2]), float(data[3]))
 
 func _ready() -> void:
-	var layout: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/city_layout.json"))
-	var extras: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/city_details.json"))
+	var catalog: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/cities.json"))
+	if game != null: city_id = str(game.selected_city)
+	profile = catalog.cities.get(city_id, catalog.cities.barcelona)
+	var layout: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/city_layout_%s.json" % city_id))
+	var extras: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/city_details_%s.json" % city_id))
 	var countryside: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/wilderness.json"))
-	for beach in extras.beaches + countryside.beaches:
-		beaches.append(as_rect(beach.rect))
-		beach_names.append(beach.name)
+	if profile.get("coastal", true):
+		var coast_names: Array = profile.beaches
+		for i in range(countryside.beaches.size()):
+			var beach: Dictionary = countryside.beaches[i]
+			beaches.append(as_rect(beach.rect))
+			beach_names.append(str(coast_names[i]) if i < coast_names.size() else beach.name)
 	roundabouts = extras.roundabouts
 	districts = layout.districts
 	for name in ["grass", "dirt", "water", "stone", "tree", "shrub", "rocks", "table", "bridge"]:
@@ -55,7 +63,7 @@ func _ready() -> void:
 	var pavements: Array[Texture2D] = [load("res://assets/sprites/sidewalk.png")]
 	for i in range(2,5): pavements.append(load("res://assets/sprites/sidewalk_%02d.png" % i))
 	var rooftops: Array[Texture2D] = []
-	for i in range(1,15): rooftops.append(load("res://assets/sprites/building_%02d.png" % i))
+	for path in profile.buildings: rooftops.append(load("res://" + str(path)))
 	# The original centre is preserved; new neighbourhoods occupy both river banks.
 	var columns: Array = layout.columns
 	var raw_vertical: Array[Rect2] = []
@@ -83,7 +91,7 @@ func _ready() -> void:
 			if entry.kind == "park":
 				parks.append(rect)
 				block_building_counts.append(0)
-				populate_park(rect, blocks.size()-1, pavement)
+				populate_park(rect, blocks.size()-1, pavement, int(columns.find(column)), int(column.blocks.find(entry)))
 			elif entry.kind == "vacant":
 				vacant_lots.append(rect)
 				block_building_counts.append(0)
@@ -129,6 +137,7 @@ func subtract_all(rect: Rect2, cuts: Array[Rect2]) -> Array[Rect2]:
 func add_tiled(texture: Texture2D, rect: Rect2, layer := 0) -> void:
 	var sprite := Sprite2D.new()
 	sprite.texture = texture
+	if texture == nature.get("water"): sprite.modulate = Color(str(profile.water))
 	sprite.texture_repeat = CanvasItem.TEXTURE_REPEAT_MIRROR
 	sprite.region_enabled = true
 	sprite.region_rect = Rect2(Vector2.ZERO,rect.size)
@@ -153,7 +162,11 @@ func add_sidewalk(texture: Texture2D, rect: Rect2, angle := 0.0, inset_scale := 
 	pavement.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(pavement)
 
-func populate_park(rect: Rect2, index: int, pavement: Texture2D) -> void:
+func populate_park(rect: Rect2, index: int, pavement: Texture2D, grid_column := -1, grid_row := -1) -> void:
+	for landmark in profile.landmarks:
+		if landmark.block == [grid_column, grid_row]:
+			populate_landmark(rect, landmark)
+			return
 	add_tiled(nature.grass,rect.grow(-25))
 	add_sidewalk(pavement,Rect2(rect.position.x+25,rect.get_center().y-26,rect.size.x-50,52))
 	add_sidewalk(pavement,Rect2(rect.get_center().x-26,rect.position.y+25,52,rect.size.y-50))
@@ -167,6 +180,18 @@ func populate_park(rect: Rect2, index: int, pavement: Texture2D) -> void:
 	add_sprite(nature.table,table_at,Vector2(65,55),Color.WHITE)
 	add_collider(Rect2(table_at-Vector2(24,18),Vector2(48,36)))
 	add_sprite(nature.shrub,rect.position+Vector2(75,rect.size.y-65),Vector2(85,65),Color.WHITE)
+
+func populate_landmark(rect: Rect2, landmark: Dictionary) -> void:
+	add_tiled(nature.grass, rect.grow(-25))
+	var center := rect.get_center()
+	var footpath := Rect2(center - Vector2(18, rect.size.y * 0.34), Vector2(36, rect.size.y * 0.68))
+	add_sidewalk(load("res://assets/sprites/sidewalk.png"), footpath)
+	var texture: Texture2D = load("res://" + str(landmark.sprite))
+	var max_size := rect.size * 0.8
+	var asset_scale := minf(max_size.x / texture.get_width(), max_size.y / texture.get_height())
+	var footprint := Vector2(texture.get_size()) * asset_scale
+	add_sprite(texture, center, footprint, Color.WHITE)
+	add_collider(Rect2(center - footprint * 0.32, footprint * 0.64))
 
 func populate_block(rect: Rect2, index: int, textures: Array[Texture2D]) -> void:
 	var angle := block_angles[index]
@@ -319,9 +344,9 @@ func district_at(at: Vector2) -> String:
 	return "RIBERA"
 
 func _draw() -> void:
-	draw_rect(WORLD_BOUNDS.grow(1200),Color("35443b"))
-	draw_rect(URBAN_BOUNDS,Color("293238"))
-	var paint := Color("a399757a")
+	draw_rect(WORLD_BOUNDS.grow(1200),Color(str(profile.ground)))
+	draw_rect(URBAN_BOUNDS,Color(str(profile.urban)))
+	var paint := Color("e6d8bf72")
 	for road in vertical_roads:
 		var x := road.get_center().x
 		for y in range(int(road.position.y+36),int(road.end.y-36),64):

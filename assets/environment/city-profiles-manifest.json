@@ -1,0 +1,313 @@
+{
+  "tool": "built-in image_gen",
+  "cities": {
+    "barcelona": {
+      "source": "assets/raw/barcelona_props.png",
+      "items": [
+        {
+          "name": "sagrada_familia",
+          "cell": 0,
+          "crop": [
+            65,
+            8,
+            563,
+            611
+          ],
+          "size": [
+            498,
+            603
+          ],
+          "alpha": true,
+          "edge_touch": false,
+          "landmark": true,
+          "path": "assets/environment/cities/barcelona/sagrada_familia.png"
+        },
+        {
+          "name": "roof_1",
+          "cell": 1,
+          "crop": [
+            58,
+            51,
+            578,
+            598
+          ],
+          "size": [
+            520,
+            547
+          ],
+          "alpha": true,
+          "edge_touch": false,
+          "landmark": false,
+          "path": "assets/environment/cities/barcelona/roof_1.png"
+        },
+        {
+          "name": "casa_batllo",
+          "cell": 2,
+          "crop": [
+            55,
+            19,
+            567,
+            596
+          ],
+          "size": [
+            512,
+            577
+          ],
+          "alpha": true,
+          "edge_touch": false,
+          "landmark": true,
+          "path": "assets/environment/cities/barcelona/casa_batllo.png"
+        },
+        {
+          "name": "roof_3",
+          "cell": 3,
+          "crop": [
+            46,
+            21,
+            576,
+            587
+          ],
+          "size": [
+            530,
+            566
+          ],
+          "alpha": true,
+          "edge_touch": false,
+          "landmark": false,
+          "path": "assets/environment/cities/barcelona/roof_3.png"
+        }
+      ]
+    },
+    "paris": {
+      "source": "assets/raw/paris_props.png",
+      "items": [
+        {
+          "name": "eiffel_tower",
+          "cell": 0,
+          "crop": [
+            71,
+            32,
+            565,
+            580
+          ],
+          "size": [
+            494,
+            548
+          ],
+          "alpha": true,
+          "edge_touch": false,
+          "landmark": true,
+          "path": "assets/environment/cities/paris/eiffel_tower.png"
+        },
+        {
+          "name": "roof_1",
+          "cell": 1,
+          "crop": [
+            57,
+            32,
+            577,
+            576
+          ],
+          "size": [
+            520,
+            544
+          ],
+          "alpha": true,
+          "edge_touch": false,
+          "landmark": false,
+          "path": "assets/environment/cities/paris/roof_1.png"
+        },
+        {
+          "name": "louvre",
+          "cell": 2,
+          "crop": [
+            41,
+            25,
+            593,
+            591
+          ],
+          "size": [
+            552,
+            566
+          ],
+          "alpha": true,
+          "edge_touch": false,
+          "landmark": true,
+          "path": "assets/environment/cities/paris/louvre.png"
+        },
+        {
+          "name": "roof_3",
+          "cell": 3,
+          "crop": [
+            48,
+            27,
+            588,
+            592
+          ],
+          "size": [
+            540,
+            565
+          ],
+          "alpha": true,
+          "edge_touch": false,
+          "landmark": false,
+          "path": "assets/environment/cities/paris/roof_3.png"
+        }
+      ]
+    },
+    "miami": {
+      "source": "assets/raw/miami_props.png",
+      "items": [
+        {
+          "name": "freedom_tower",
+          "cell": 0,
+          "crop": [
+            110,
+            37,
+            525,
+            588
+          ],
+          "size": [
+            415,
+            551
+          ],
+          "alpha": true,
+          "edge_touch": false,
+          "landmark": true,
+          "path": "assets/environment/cities/miami/freedom_tower.png"
+        },
+        {
+          "name": "art_deco_hotel",
+          "cell": 1,
+          "crop": [
+            92,
+            70,
+            535,
+            572
+          ],
+          "size": [
+            443,
+            502
+          ],
+          "alpha": true,
+          "edge_touch": false,
+          "landmark": true,
+          "path": "assets/environment/cities/miami/art_deco_hotel.png"
+        },
+        {
+          "name": "roof_2",
+          "cell": 2,
+          "crop": [
+            110,
+            74,
+            515,
+            570
+          ],
+          "size": [
+            405,
+            496
+          ],
+          "alpha": true,
+          "edge_touch": false,
+          "landmark": false,
+          "path": "assets/environment/cities/miami/roof_2.png"
+        },
+        {
+          "name": "roof_3",
+          "cell": 3,
+          "crop": [
+            80,
+            33,
+            547,
+            602
+          ],
+          "size": [
+            467,
+            569
+          ],
+          "alpha": true,
+          "edge_touch": false,
+          "landmark": false,
+          "path": "assets/environment/cities/miami/roof_3.png"
+        }
+      ]
+    },
+    "los_angeles": {
+      "source": "assets/raw/los_angeles_props.png",
+      "items": [
+        {
+          "name": "griffith_observatory",
+          "cell": 0,
+          "crop": [
+            37,
+            46,
+            594,
+            594
+          ],
+          "size": [
+            557,
+            548
+          ],
+          "alpha": true,
+          "edge_touch": false,
+          "landmark": true,
+          "path": "assets/environment/cities/los_angeles/griffith_observatory.png"
+        },
+        {
+          "name": "roof_1",
+          "cell": 1,
+          "crop": [
+            58,
+            45,
+            569,
+            568
+          ],
+          "size": [
+            511,
+            523
+          ],
+          "alpha": true,
+          "edge_touch": false,
+          "landmark": false,
+          "path": "assets/environment/cities/los_angeles/roof_1.png"
+        },
+        {
+          "name": "roof_2",
+          "cell": 2,
+          "crop": [
+            37,
+            50,
+            588,
+            582
+          ],
+          "size": [
+            551,
+            532
+          ],
+          "alpha": true,
+          "edge_touch": false,
+          "landmark": false,
+          "path": "assets/environment/cities/los_angeles/roof_2.png"
+        },
+        {
+          "name": "city_hall",
+          "cell": 3,
+          "crop": [
+            59,
+            32,
+            563,
+            583
+          ],
+          "size": [
+            504,
+            551
+          ],
+          "alpha": true,
+          "edge_touch": false,
+          "landmark": true,
+          "path": "assets/environment/cities/los_angeles/city_hall.png"
+        }
+      ]
+    }
+  }
+}

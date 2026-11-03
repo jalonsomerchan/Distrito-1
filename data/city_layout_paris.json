@@ -1,0 +1,1207 @@
+{
+  "version": 5,
+  "bounds": [
+    -400,
+    -400,
+    14800,
+    13200
+  ],
+  "columns": [
+    {
+      "x": 0,
+      "width": 630,
+      "blocks": [
+        {
+          "y": 0,
+          "height": 630,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 850,
+          "height": 340,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 1410,
+          "height": 930,
+          "kind": "park",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 2560,
+          "height": 620,
+          "kind": "buildings",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 3420,
+          "height": 810,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 4500,
+          "height": 620,
+          "kind": "park",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 5400,
+          "height": 850,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 6500,
+          "height": 900,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 8700,
+          "height": 650,
+          "kind": "park",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 9650,
+          "height": 900,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 10800,
+          "height": 620,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 11700,
+          "height": 700,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        }
+      ]
+    },
+    {
+      "x": 900,
+      "width": 440,
+      "blocks": [
+        {
+          "y": 0,
+          "height": 340,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 560,
+          "height": 940,
+          "kind": "buildings",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 1740,
+          "height": 600,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 2560,
+          "height": 340,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 3120,
+          "height": 1110,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 4500,
+          "height": 620,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 5400,
+          "height": 850,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 6500,
+          "height": 900,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 8700,
+          "height": 650,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 9650,
+          "height": 900,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 10800,
+          "height": 620,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 11700,
+          "height": 700,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        }
+      ]
+    },
+    {
+      "x": 1570,
+      "width": 920,
+      "blocks": [
+        {
+          "y": 0,
+          "height": 950,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 14
+        },
+        {
+          "y": 1190,
+          "height": 620,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 2050,
+          "height": 340,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 2630,
+          "height": 950,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 3820,
+          "height": 410,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 4500,
+          "height": 620,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 5400,
+          "height": 850,
+          "kind": "park",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 6500,
+          "height": 900,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 8700,
+          "height": 650,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 9650,
+          "height": 900,
+          "kind": "park",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 10800,
+          "height": 620,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 11700,
+          "height": 700,
+          "kind": "buildings",
+          "sidewalk": 0,
+          "angle": 0
+        }
+      ]
+    },
+    {
+      "x": 2750,
+      "width": 560,
+      "blocks": [
+        {
+          "y": 0,
+          "height": 340,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 570,
+          "height": 620,
+          "kind": "park",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 1420,
+          "height": 630,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 2290,
+          "height": 940,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 3470,
+          "height": 760,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 4500,
+          "height": 620,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 5400,
+          "height": 850,
+          "kind": "park",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 6500,
+          "height": 900,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 8700,
+          "height": 650,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 9650,
+          "height": 900,
+          "kind": "buildings",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 10800,
+          "height": 620,
+          "kind": "vacant",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 11700,
+          "height": 700,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        }
+      ]
+    },
+    {
+      "x": 3530,
+      "width": 700,
+      "blocks": [
+        {
+          "y": 0,
+          "height": 630,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 850,
+          "height": 930,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": -14
+        },
+        {
+          "y": 2020,
+          "height": 340,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 2580,
+          "height": 630,
+          "kind": "buildings",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 3430,
+          "height": 800,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 4500,
+          "height": 620,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 5400,
+          "height": 850,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 6500,
+          "height": 900,
+          "kind": "park",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 8700,
+          "height": 650,
+          "kind": "vacant",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 9650,
+          "height": 900,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 10800,
+          "height": 620,
+          "kind": "park",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 11700,
+          "height": 700,
+          "kind": "buildings",
+          "sidewalk": 0,
+          "angle": 0
+        }
+      ]
+    },
+    {
+      "x": 4550,
+      "width": 1100,
+      "blocks": [
+        {
+          "y": 0,
+          "height": 950,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 1190,
+          "height": 620,
+          "kind": "buildings",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 2050,
+          "height": 930,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": -14
+        },
+        {
+          "y": 3220,
+          "height": 1000,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 14
+        },
+        {
+          "y": 4500,
+          "height": 620,
+          "kind": "park",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 5400,
+          "height": 850,
+          "kind": "buildings",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 6500,
+          "height": 900,
+          "kind": "vacant",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 8700,
+          "height": 650,
+          "kind": "park",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 9650,
+          "height": 900,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 10800,
+          "height": 620,
+          "kind": "buildings",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 11700,
+          "height": 700,
+          "kind": "vacant",
+          "sidewalk": 1,
+          "angle": 0
+        }
+      ]
+    },
+    {
+      "x": 7700,
+      "width": 600,
+      "blocks": [
+        {
+          "y": 0,
+          "height": 620,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 860,
+          "height": 930,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 2070,
+          "height": 340,
+          "kind": "park",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 2630,
+          "height": 760,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 3630,
+          "height": 950,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 4860,
+          "height": 630,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 5710,
+          "height": 820,
+          "kind": "park",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 6770,
+          "height": 620,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 7670,
+          "height": 930,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 8820,
+          "height": 340,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 9400,
+          "height": 760,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 10440,
+          "height": 950,
+          "kind": "park",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 11610,
+          "height": 630,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        }
+      ]
+    },
+    {
+      "x": 8590,
+      "width": 920,
+      "blocks": [
+        {
+          "y": 0,
+          "height": 340,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 620,
+          "height": 760,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 1600,
+          "height": 950,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 2790,
+          "height": 630,
+          "kind": "park",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 3700,
+          "height": 820,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 4740,
+          "height": 620,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 5600,
+          "height": 930,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 6810,
+          "height": 340,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 7370,
+          "height": 760,
+          "kind": "park",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 8370,
+          "height": 950,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 9600,
+          "height": 630,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 10450,
+          "height": 820,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 11510,
+          "height": 620,
+          "kind": "park",
+          "sidewalk": 3,
+          "angle": 0
+        }
+      ]
+    },
+    {
+      "x": 9820,
+      "width": 460,
+      "blocks": [
+        {
+          "y": 0,
+          "height": 950,
+          "kind": "park",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 1170,
+          "height": 630,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 2040,
+          "height": 820,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 3140,
+          "height": 620,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 3980,
+          "height": 930,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 5150,
+          "height": 340,
+          "kind": "park",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 5770,
+          "height": 760,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 6750,
+          "height": 950,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 7940,
+          "height": 630,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 8850,
+          "height": 820,
+          "kind": "park",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 9890,
+          "height": 620,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 10750,
+          "height": 930,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 11960,
+          "height": 340,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        }
+      ]
+    },
+    {
+      "x": 10580,
+      "width": 1100,
+      "blocks": [
+        {
+          "y": 0,
+          "height": 820,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 1060,
+          "height": 620,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 1960,
+          "height": 930,
+          "kind": "park",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 3110,
+          "height": 340,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 3690,
+          "height": 760,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": -13
+        },
+        {
+          "y": 4730,
+          "height": 950,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 5900,
+          "height": 630,
+          "kind": "park",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 6770,
+          "height": 820,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 7870,
+          "height": 620,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 8710,
+          "height": 930,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 9880,
+          "height": 340,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 10500,
+          "height": 760,
+          "kind": "park",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 11480,
+          "height": 920,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        }
+      ]
+    },
+    {
+      "x": 12000,
+      "width": 630,
+      "blocks": [
+        {
+          "y": 0,
+          "height": 930,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 1210,
+          "height": 340,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 1770,
+          "height": 760,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 2770,
+          "height": 950,
+          "kind": "park",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 4000,
+          "height": 630,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 4850,
+          "height": 820,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 5910,
+          "height": 620,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 6810,
+          "height": 930,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 7960,
+          "height": 340,
+          "kind": "park",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 8540,
+          "height": 760,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 9580,
+          "height": 950,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 10750,
+          "height": 630,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 11620,
+          "height": 780,
+          "kind": "park",
+          "sidewalk": 1,
+          "angle": 0
+        }
+      ]
+    },
+    {
+      "x": 12950,
+      "width": 920,
+      "blocks": [
+        {
+          "y": 0,
+          "height": 760,
+          "kind": "park",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 980,
+          "height": 950,
+          "kind": "vacant",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 2170,
+          "height": 630,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 3080,
+          "height": 820,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 4120,
+          "height": 620,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 4980,
+          "height": 930,
+          "kind": "park",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 6190,
+          "height": 340,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 6750,
+          "height": 760,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 13
+        },
+        {
+          "y": 7750,
+          "height": 950,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        },
+        {
+          "y": 8980,
+          "height": 630,
+          "kind": "park",
+          "sidewalk": 0,
+          "angle": 0
+        },
+        {
+          "y": 9830,
+          "height": 820,
+          "kind": "buildings",
+          "sidewalk": 1,
+          "angle": 0
+        },
+        {
+          "y": 10890,
+          "height": 620,
+          "kind": "buildings",
+          "sidewalk": 2,
+          "angle": 0
+        },
+        {
+          "y": 11790,
+          "height": 610,
+          "kind": "buildings",
+          "sidewalk": 3,
+          "angle": 0
+        }
+      ]
+    }
+  ],
+  "rivers": [
+    {
+      "name": "LA SEINE",
+      "rect": [
+        -400,
+        7500,
+        14800,
+        900
+      ]
+    }
+  ],
+  "bridges": [
+    {
+      "name": "PONT NEUF",
+      "rect": [
+        605,
+        7100,
+        320,
+        1700
+      ],
+      "axis": "vertical"
+    },
+    {
+      "name": "PONT DES ARTS",
+      "rect": [
+        7240,
+        7100,
+        320,
+        1700
+      ],
+      "axis": "vertical"
+    },
+    {
+      "name": "PONT ALEXANDRE III",
+      "rect": [
+        13975,
+        7100,
+        320,
+        1700
+      ],
+      "axis": "vertical"
+    }
+  ],
+  "districts": [
+    {
+      "name": "LE MARAIS",
+      "rect": [
+        -400,
+        -400,
+        4800,
+        4800
+      ]
+    },
+    {
+      "name": "ÎLE DE LA CITÉ",
+      "rect": [
+        4400,
+        4400,
+        2600,
+        2400
+      ]
+    },
+    {
+      "name": "RIVE GAUCHE",
+      "rect": [
+        7100,
+        4400,
+        7300,
+        3200
+      ]
+    },
+    {
+      "name": "MONTMARTRE",
+      "rect": [
+        7100,
+        8400,
+        7300,
+        4400
+      ]
+    }
+  ]
+}

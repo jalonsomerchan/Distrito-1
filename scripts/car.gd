@@ -110,9 +110,9 @@ func _physics_process(delta: float) -> void:
 	impact_cooldown = maxf(impact_cooldown - delta, 0.0)
 	if health <= 0.0:
 		return
-	var throttle := Input.get_action_strength("accelerate")
-	var brake := Input.get_action_strength("brake")
-	var steer := Input.get_axis("steer_left", "steer_right")
+	var throttle := _shape_analog(Input.get_action_strength("accelerate"))
+	var brake := _shape_analog(Input.get_action_strength("brake"))
+	var steer := _shape_analog(Input.get_axis("steer_left", "steer_right"))
 	var handbrake := Input.is_action_pressed("handbrake")
 	var max_speed := float(vehicle_data.sidewalk_max_speed if on_sidewalk else vehicle_data.max_speed)
 	if throttle > 0.01:
@@ -144,3 +144,7 @@ func _physics_process(delta: float) -> void:
 	distance_driven += position.distance_to(previous)
 	camera.position = camera.position.lerp(Vector2(0, -absf(speed) * 0.17).rotated(rotation), delta * 2.0)
 	camera.zoom = camera.zoom.lerp(Vector2.ONE * lerpf(1.0, 0.84, clampf(absf(speed) / float(vehicle_data.max_speed), 0, 1)), delta * 2.0)
+
+func _shape_analog(value: float) -> float:
+	# Ease partial stick/trigger travel without changing full keyboard or button input.
+	return signf(value) * pow(absf(value), 1.5)

@@ -1,0 +1,208 @@
+{
+  "version": 1,
+  "cities": {
+    "barcelona": {
+      "coastal": true,
+      "name": "BARCELONA",
+      "tagline": "EIXAMPLE · COSTA MEDITERRÁNEA",
+      "landmark": "SAGRADA FAMÍLIA · CASA BATLLÓ",
+      "summary": "Manzanas achaflanadas y tejados modernistas junto al mar.",
+      "water": "#287d89",
+      "urban": "#31363b",
+      "ground": "#65724e",
+      "parks": "#4c8456",
+      "buildings": [
+        "assets/environment/cities/barcelona/roof_1.png",
+        "assets/environment/cities/barcelona/roof_3.png"
+      ],
+      "landmarks": [
+        {
+          "block": [
+            7,
+            8
+          ],
+          "sprite": "assets/environment/cities/barcelona/sagrada_familia.png",
+          "name": "SAGRADA FAMÍLIA"
+        },
+        {
+          "block": [
+            9,
+            6
+          ],
+          "sprite": "assets/environment/cities/barcelona/casa_batllo.png",
+          "name": "CASA BATLLÓ"
+        }
+      ],
+      "roundabouts": [
+        [
+          7400,
+          3510,
+          65
+        ],
+        [
+          14135,
+          10230,
+          65
+        ]
+      ],
+      "districts": [
+        "GÒTIC",
+        "EIXAMPLE",
+        "GRÀCIA",
+        "MONTJUÏC"
+      ],
+      "beaches": [
+        "BARCELONETA",
+        "CALA DEL PINAR",
+        "PLAYA BRAVA"
+      ]
+    },
+    "paris": {
+      "coastal": false,
+      "name": "PARÍS",
+      "tagline": "RIVE GAUCHE · SEINE",
+      "landmark": "TORRE EIFFEL · LOUVRE",
+      "summary": "La Seine divide la ciudad; tres puentes conectan sus barrios.",
+      "water": "#397c91",
+      "urban": "#353941",
+      "ground": "#70745f",
+      "parks": "#5d8056",
+      "buildings": [
+        "assets/environment/cities/paris/roof_1.png",
+        "assets/environment/cities/paris/roof_3.png"
+      ],
+      "landmarks": [
+        {
+          "block": [
+            0,
+            8
+          ],
+          "sprite": "assets/environment/cities/paris/eiffel_tower.png",
+          "name": "TOUR EIFFEL"
+        },
+        {
+          "block": [
+            9,
+            2
+          ],
+          "sprite": "assets/environment/cities/paris/louvre.png",
+          "name": "MUSÉE DU LOUVRE"
+        }
+      ],
+      "roundabouts": [
+        [
+          7400,
+          3510,
+          100
+        ]
+      ],
+      "districts": [
+        "LE MARAIS",
+        "ÎLE DE LA CITÉ",
+        "RIVE GAUCHE",
+        "MONTMARTRE"
+      ],
+      "beaches": [
+        "BORDS DE SEINE",
+        "QUAIS DE PARIS",
+        "PROMENADE DU SUD"
+      ]
+    },
+    "miami": {
+      "coastal": true,
+      "name": "MIAMI",
+      "tagline": "SOUTH BEACH · INTRACOASTAL",
+      "landmark": "FREEDOM TOWER · SOUTH BEACH",
+      "summary": "Canales, hoteles Art Déco y avenidas de palmeras.",
+      "water": "#268c9a",
+      "urban": "#344047",
+      "ground": "#8a7858",
+      "parks": "#5d8956",
+      "buildings": [
+        "assets/environment/cities/miami/roof_2.png",
+        "assets/environment/cities/miami/roof_3.png"
+      ],
+      "landmarks": [
+        {
+          "block": [
+            5,
+            4
+          ],
+          "sprite": "assets/environment/cities/miami/freedom_tower.png",
+          "name": "FREEDOM TOWER"
+        },
+        {
+          "block": [
+            7,
+            8
+          ],
+          "sprite": "assets/environment/cities/miami/art_deco_hotel.png",
+          "name": "SOUTH BEACH ART DÉCO"
+        }
+      ],
+      "roundabouts": [],
+      "districts": [
+        "DOWNTOWN",
+        "SOUTH BEACH",
+        "ART DÉCO",
+        "LITTLE HAVANA"
+      ],
+      "beaches": [
+        "SOUTH BEACH",
+        "NORTH BEACH",
+        "KEY BISCAYNE"
+      ]
+    },
+    "los_angeles": {
+      "coastal": true,
+      "name": "LOS ÁNGELES",
+      "tagline": "DOWNTOWN · HOLLYWOOD HILLS",
+      "landmark": "GRIFFITH OBSERVATORY · CITY HALL",
+      "summary": "Supermanzanas, palmeras y colinas sobre el downtown.",
+      "water": "#327b88",
+      "urban": "#3a3937",
+      "ground": "#7e704d",
+      "parks": "#668052",
+      "buildings": [
+        "assets/environment/cities/los_angeles/roof_1.png",
+        "assets/environment/cities/los_angeles/roof_2.png"
+      ],
+      "landmarks": [
+        {
+          "block": [
+            2,
+            9
+          ],
+          "sprite": "assets/environment/cities/los_angeles/griffith_observatory.png",
+          "name": "GRIFFITH OBSERVATORY"
+        },
+        {
+          "block": [
+            9,
+            2
+          ],
+          "sprite": "assets/environment/cities/los_angeles/city_hall.png",
+          "name": "LOS ANGELES CITY HALL"
+        }
+      ],
+      "roundabouts": [
+        [
+          7400,
+          8710,
+          90
+        ]
+      ],
+      "districts": [
+        "DOWNTOWN",
+        "HOLLYWOOD",
+        "ECHO PARK",
+        "MIRACLE MILE"
+      ],
+      "beaches": [
+        "SANTA MONICA",
+        "VENICE BEACH",
+        "MALIBU"
+      ]
+    }
+  }
+}

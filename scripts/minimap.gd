@@ -6,6 +6,7 @@ var traffic: Node2D
 var delivery: Node2D
 var pursuit: Node2D
 var escape: Node2D
+var quick_pickup: Node2D
 
 func _process(_delta: float) -> void:
 	queue_redraw()
@@ -15,8 +16,8 @@ func _draw() -> void:
 	var bounds: Rect2 = city.WORLD_BOUNDS
 	var factor := minf((size.x - 24) / bounds.size.x, (size.y - 24) / bounds.size.y)
 	var offset := (size-bounds.size*factor)/2 - bounds.position*factor
-	draw_rect(Rect2(offset + bounds.position * factor, bounds.size * factor), Color("59764d"))
-	draw_rect(Rect2(offset + city.URBAN_BOUNDS.position * factor, city.URBAN_BOUNDS.size * factor), Color("293238"))
+	draw_rect(Rect2(offset + bounds.position * factor, bounds.size * factor), Color(city.profile.ground))
+	draw_rect(Rect2(offset + city.URBAN_BOUNDS.position * factor, city.URBAN_BOUNDS.size * factor), Color(city.profile.urban))
 	for forest in city.wilderness.forests:
 		var rect: Rect2 = city.as_rect(forest.rect)
 		draw_rect(Rect2(offset + rect.position * factor, rect.size * factor), Color("3d6749"))
@@ -25,7 +26,7 @@ func _draw() -> void:
 	for i in range(city.blocks.size()):
 		var block: Rect2 = city.blocks[i]
 		var kind: String = city.block_kinds[i]
-		var color := Color("4c8456") if kind == "park" else (Color("967c54") if kind == "vacant" else Color("65766f"))
+	var color := Color(city.profile.parks) if kind == "park" else (Color("967c54") if kind == "vacant" else Color("65766f"))
 		var angle: float = city.block_angles[i]
 		if angle == 0.0 or kind != "buildings":
 			draw_rect(Rect2(offset+block.position*factor,block.size*factor),color)
@@ -37,7 +38,7 @@ func _draw() -> void:
 				corners.append(center + corner.rotated(angle))
 			draw_colored_polygon(corners,color)
 	for river in city.rivers:
-		draw_rect(Rect2(offset+river.position*factor,river.size*factor),Color("287a87"))
+		draw_rect(Rect2(offset+river.position*factor,river.size*factor),Color(city.profile.water))
 	for beach in city.beaches:
 		draw_rect(Rect2(offset + beach.position * factor, beach.size * factor), Color("d8c18c"))
 	for trail in city.wilderness.trails:
@@ -71,6 +72,12 @@ func _draw() -> void:
 			var at: Vector2 = offset + patrol.position * factor
 			draw_circle(at, 4, escape.COLOR)
 			draw_arc(at, 7, 0, TAU, 20, escape.COLOR, 1.5, true)
+	if quick_pickup != null and quick_pickup.visible and quick_pickup.phase == "active":
+		for i in range(1, quick_pickup.route.size()):
+			draw_line(offset + quick_pickup.route[i - 1] * factor, offset + quick_pickup.route[i] * factor, Color(quick_pickup.COLOR, 0.65), 2, true)
+		var coin: Vector2 = offset + quick_pickup.target_position() * factor
+		draw_circle(coin, 6, quick_pickup.COLOR)
+		draw_arc(coin, 9, 0, TAU, 24, quick_pickup.COLOR, 2, true)
 	var point: Vector2 = offset + car.position * factor
 	draw_circle(point, 5, Color("f3a263"))
 	draw_line(point, point + Vector2.UP.rotated(car.rotation) * 14, Color("fff1da"), 3, true)

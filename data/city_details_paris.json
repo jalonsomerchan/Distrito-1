@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "beaches": [],
+  "roundabouts": [
+    {
+      "name": "ROTONDA 1",
+      "center": [
+        7400,
+        3510
+      ],
+      "radius": 100
+    }
+  ],
+  "signals": [
+    {
+      "center": [
+        765,
+        740
+      ],
+      "width": 270,
+      "depth": 220
+    },
+    {
+      "center": [
+        1455,
+        1620
+      ],
+      "width": 230,
+      "depth": 240
+    },
+    {
+      "center": [
+        2620,
+        1935
+      ],
+      "width": 260,
+      "depth": 250
+    },
+    {
+      "center": [
+        4390,
+        2470
+      ],
+      "width": 320,
+      "depth": 220
+    },
+    {
+      "center": [
+        765,
+        4365
+      ],
+      "width": 270,
+      "depth": 270
+    },
+    {
+      "center": [
+        1455,
+        5260
+      ],
+      "width": 230,
+      "depth": 280
+    },
+    {
+      "center": [
+        7400,
+        740
+      ],
+      "width": 600,
+      "depth": 240
+    },
+    {
+      "center": [
+        9665,
+        1490
+      ],
+      "width": 310,
+      "depth": 220
+    },
+    {
+      "center": [
+        11840,
+        3560
+      ],
+      "width": 320,
+      "depth": 280
+    },
+    {
+      "center": [
+        7400,
+        6650
+      ],
+      "width": 600,
+      "depth": 240
+    },
+    {
+      "center": [
+        9665,
+        8250
+      ],
+      "width": 310,
+      "depth": 240
+    },
+    {
+      "center": [
+        14135,
+        11890
+      ],
+      "width": 530,
+      "depth": 240
+    }
+  ]
+}

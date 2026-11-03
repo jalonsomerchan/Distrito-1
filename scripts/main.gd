@@ -7,6 +7,7 @@ const Traffic = preload("res://scripts/traffic.gd")
 const Delivery = preload("res://scripts/delivery.gd")
 const Pursuit = preload("res://scripts/pursuit.gd")
 const Escape = preload("res://scripts/escape.gd")
+const QuickPickup = preload("res://scripts/quick_pickup.gd")
 const Catalog = preload("res://scripts/vehicle_catalog.gd")
 const SAVE_PATH := "user://district_save.json"
 const SPAWN := Vector2(765, 1240)
@@ -21,6 +22,7 @@ var city: Node2D
 var traffic: Node2D
 var ui: CanvasLayer
 var escape: Node2D
+var quick_pickup: Node2D
 var pursuit: Node2D
 var result_heading: Label
 var result_title: Label
@@ -34,6 +36,7 @@ var mission_label: Label
 var mission_timer: Label
 var mission_detail: Label
 var menu: Control
+var city_select: Control
 var hud: Control
 var pause_panel: Control
 var speed_label: Label
@@ -47,20 +50,40 @@ var pause_status: Label
 var hints: Label
 var load_button: Button
 var car_button: Button
+var menu_city_name: Label
+var menu_location: Label
 var playing := false
 var paused := false
 var using_gamepad := false
 var autosave_timer := 0.0
 var toast_timer := 0.0
 var save_path := SAVE_PATH
+var selected_city := "barcelona"
+var city_select_from_menu := false
+var minimap: Control
 
 func _ready() -> void:
 	get_tree().auto_accept_quit = false
 	using_gamepad = not Input.get_connected_joypads().is_empty()
 	Input.joy_connection_changed.connect(_controller_changed)
 	_setup_input()
+	_create_world()
+	ui = CanvasLayer.new()
+	add_child(ui)
+	_setup_theme()
+	_build_menu()
+	_build_city_select()
+	_build_hud()
+	_build_pause()
+	_build_modes()
+	_build_result()
+	car.destroyed.connect(func(): _toast("Coche destrozado. R / Y para reponerlo."))
+	show_city_select(false)
+
+func _create_world() -> void:
 	city = City.new()
 	city.game = self
+	city.city_id = selected_city
 	add_child(city)
 	car = Car.new()
 	car.position = SPAWN
@@ -93,16 +116,40 @@ func _ready() -> void:
 	add_child(escape)
 	escape.level_started.connect(_escape_started)
 	escape.failed.connect(_escape_failed)
-	ui = CanvasLayer.new()
-	add_child(ui)
-	_setup_theme()
-	_build_menu()
-	_build_hud()
-	_build_pause()
-	_build_modes()
-	_build_result()
+	quick_pickup = QuickPickup.new()
+	quick_pickup.roads = delivery
+	quick_pickup.city = city
+	quick_pickup.car = car
+	add_child(quick_pickup)
+	quick_pickup.expired.connect(_quick_pickup_failed)
+	if minimap != null: _bind_minimap()
+
+func _replace_world() -> void:
+	var vehicle_id := car.vehicle_id if car != null else Catalog.default_id()
+	for node in [quick_pickup, escape, pursuit, delivery, traffic, car, city]:
+		if is_instance_valid(node):
+			remove_child(node)
+			node.free()
+	_create_world()
+	car.set_vehicle(vehicle_id)
+	car.position = SPAWN
 	car.destroyed.connect(func(): _toast("Coche destrozado. R / Y para reponerlo."))
-	show_menu()
+	if car_button != null: car_button.text = "COCHE: " + car.vehicle_name() + "   ↻"
+	if menu_city_name != null: menu_city_name.text = str(city.profile.name)
+	if menu_location != null: menu_location.text = str(city.profile.tagline)
+	if menu != null:
+		for child in menu.get_children():
+			if child is Button and child.text.begins_with("CIUDAD:"):
+				child.text = "CIUDAD: " + city.profile.name + "   ↻"
+
+func _bind_minimap() -> void:
+	minimap.city = city
+	minimap.car = car
+	minimap.traffic = traffic
+	minimap.delivery = delivery
+	minimap.pursuit = pursuit
+	minimap.escape = escape
+	minimap.quick_pickup = quick_pickup
 
 func _setup_input() -> void:
 	_bind("accelerate", [KEY_W, KEY_UP], [JOY_BUTTON_A], JOY_AXIS_TRIGGER_RIGHT, 1.0)
@@ -118,7 +165,7 @@ func _setup_input() -> void:
 func _bind(action: String, keys: Array, buttons: Array, axis := -1, axis_value := 1.0) -> void:
 	if InputMap.has_action(action):
 		return
-	InputMap.add_action(action, 0.18 if axis == JOY_AXIS_LEFT_X else 0.08)
+	InputMap.add_action(action, 0.28 if axis == JOY_AXIS_LEFT_X else (0.12 if axis >= 0 else 0.08))
 	for key in keys:
 		var event := InputEventKey.new()
 		event.physical_keycode = key
@@ -213,15 +260,81 @@ func _build_menu() -> void:
 	_label(menu, "01", Vector2(48, 207), 132, ORANGE)
 	_label(menu, "La ciudad es tuya.", Vector2(56, 374), 28)
 	_label(menu, "Arranca. Explora. Encuentra tu camino.", Vector2(56, 418), 18, MUTED)
-	car_button = _button(menu, "COCHE: " + car.vehicle_name() + "   ↻", Vector2(56, 466), cycle_car)
-	_button(menu, "NUEVA PARTIDA     →", Vector2(56, 532), select_game_mode)
-	load_button = _button(menu, "CARGAR PARTIDA", Vector2(56, 608), load_game)
-	_button(menu, "SALIR", Vector2(56, 684), quit_game)
+	car_button = _button(menu, "COCHE: " + car.vehicle_name() + "   ↻", Vector2(56, 436), cycle_car)
+	_button(menu, "CIUDAD: " + city.profile.name + "   ↻", Vector2(56, 502), func(): show_city_select(true))
+	_button(menu, "NUEVA PARTIDA     →", Vector2(56, 568), select_game_mode)
+	load_button = _button(menu, "CARGAR PARTIDA", Vector2(56, 634), load_game)
+	_button(menu, "SALIR", Vector2(56, 700), quit_game)
 	_label(menu, "TECLADO + MANDO  /  1280 × 800", Vector2(56, 750), 15, MUTED)
-	_label(menu, "PUERTO COBRE", Vector2(952, 54), 24)
-	_label(menu, "CIUDAD · BOSQUES · COSTA", Vector2(882, 90), 15, CREAM)
+	menu_city_name = _label(menu, str(city.profile.name), Vector2(952, 54), 24)
+	_label(menu, "CALLES · BARRIOS · MONUMENTOS", Vector2(842, 90), 15, CREAM)
 	_rect(menu, Vector2(1180, 126), Vector2(44, 3), ORANGE)
-	_label(menu, "01 / CENTRO", Vector2(1023, 728), 20, ORANGE)
+	menu_location = _label(menu, str(city.profile.tagline), Vector2(880, 728), 17, ORANGE)
+
+func _build_city_select() -> void:
+	city_select = _layer()
+	_rect(city_select, Vector2.ZERO, Vector2(1280, 800), Color("142327f5"))
+	_label(city_select, "TU PRÓXIMA CIUDAD", Vector2(78, 54), 18, ORANGE)
+	_label(city_select, "ELIGE DESTINO", Vector2(74, 87), 46)
+	_label(city_select, "Cuatro ciudades. Cuatro mapas y skylines distintos.", Vector2(80, 145), 20, MUTED)
+	var catalog: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/cities.json"))
+	var ids := ["barcelona", "paris", "miami", "los_angeles"]
+	var positions := [Vector2(78, 205), Vector2(662, 205), Vector2(78, 446), Vector2(662, 446)]
+	for i in range(ids.size()):
+		var id: String = ids[i]
+		var profile: Dictionary = catalog.cities[id]
+		var pos: Vector2 = positions[i]
+		var button := Button.new()
+		button.position = pos
+		button.size = Vector2(540, 196)
+		button.text = ""
+		button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+		button.pressed.connect(func(): choose_city(id))
+		city_select.add_child(button)
+		var icon := TextureRect.new()
+		icon.texture = load("res://" + str(profile.landmarks[0].sprite))
+		icon.position = Vector2(14, 12)
+		icon.size = Vector2(142, 170)
+		icon.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		button.add_child(icon)
+		var city_name := _label(button, str(profile.name), Vector2(168, 28), 28)
+		city_name.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		var marker := _label(button, str(profile.landmark).to_upper(), Vector2(170, 70), 15, ORANGE)
+		marker.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		var description := _label(button, str(profile.summary), Vector2(170, 104), 17, MUTED)
+		description.size = Vector2(346, 72)
+		description.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		description.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_label(city_select, "El mapa y los monumentos cambian con cada destino.", Vector2(82, 734), 16, MUTED)
+	_button(city_select, "VOLVER", Vector2(1022, 718), _city_select_back, 180)
+	city_select.hide()
+
+func show_city_select(from_menu := false) -> void:
+	city_select_from_menu = from_menu
+	if menu != null: menu.hide()
+	if city_select != null:
+		hud.hide()
+		mode_menu.hide()
+		result_panel.hide()
+		pause_panel.hide()
+		city_select.show()
+		_focus_first(city_select)
+
+func choose_city(id: String) -> void:
+	if id not in ["barcelona", "paris", "miami", "los_angeles"]: return
+	if id != selected_city:
+		selected_city = id
+		_replace_world()
+	city_select.hide()
+	if city_select_from_menu: menu.show(); _focus_first(menu)
+	else: show_menu()
+
+func _city_select_back() -> void:
+	city_select.hide()
+	if city_select_from_menu: menu.show(); _focus_first(menu)
+	else: show_menu()
 
 func _build_modes() -> void:
 	mode_menu = _layer()
@@ -234,9 +347,11 @@ func _build_modes() -> void:
 	_label(mode_menu, "Conduce el interceptor policial y detén al fugitivo.", Vector2(340, 350), 18, MUTED)
 	_button(mode_menu, "ESCAPE    →", Vector2(340, 396), func(): start_new_game("escape"), 600)
 	_label(mode_menu, "La policía te persigue. Pierde a todas las patrullas y huye.", Vector2(340, 466), 18, MUTED)
-	_button(mode_menu, "MODO LIBRE    →", Vector2(340, 512), func(): start_new_game("free"), 600)
-	_label(mode_menu, "Explora Puerto Cobre sin objetivos ni límite de tiempo.", Vector2(340, 582), 18, MUTED)
-	_button(mode_menu, "VOLVER", Vector2(340, 652), show_menu, 600)
+	_button(mode_menu, "RECOGIDA RÁPIDA    →", Vector2(340, 512), func(): start_new_game("quick_pickup"), 600)
+	_label(mode_menu, "Encuentra cada moneda antes de que se agote la cuenta atrás.", Vector2(340, 582), 18, MUTED)
+	_button(mode_menu, "MODO LIBRE    →", Vector2(340, 628), func(): start_new_game("free"), 600)
+	_label(mode_menu, "Explora la ciudad sin objetivos ni límite de tiempo.", Vector2(340, 698), 18, MUTED)
+	_button(mode_menu, "VOLVER", Vector2(340, 738), show_menu, 600)
 	mode_menu.hide()
 
 func select_game_mode() -> void:
@@ -301,6 +416,18 @@ func _escape_failed() -> void:
 	_focus_first(result_panel)
 	save_game()
 
+func _quick_pickup_failed() -> void:
+	paused = true
+	car.enabled = false
+	result_heading.text = "RECOGIDA RÁPIDA / FIN DE PARTIDA"
+	result_title.text = "TIEMPO AGOTADO"
+	result_title.add_theme_font_size_override("font_size", 48)
+	result_label.text = "%d monedas recogidas" % quick_pickup.collected
+	pause_panel.hide()
+	result_panel.show()
+	_focus_first(result_panel)
+	save_game()
+
 func cycle_car() -> void:
 	car.select_next_vehicle()
 	car_button.text = "COCHE: " + car.vehicle_name() + "   ↻"
@@ -310,7 +437,7 @@ func _build_hud() -> void:
 	_rect(hud, Vector2(28, 26), Vector2(302, 86), Color("17272be8"))
 	_rect(hud, Vector2(28, 26), Vector2(4, 86), ORANGE)
 	_label(hud, "DISTRITO 01", Vector2(48, 37), 24)
-	district_label = _label(hud, "PUERTO COBRE / CENTRO", Vector2(48, 76), 15, MUTED)
+	district_label = _label(hud, str(city.profile.name) + " / CENTRO", Vector2(48, 76), 15, MUTED)
 	var map := Minimap.new()
 	map.city = city
 	map.car = car
@@ -318,6 +445,8 @@ func _build_hud() -> void:
 	map.delivery = delivery
 	map.pursuit = pursuit
 	map.escape = escape
+	map.quick_pickup = quick_pickup
+	minimap = map
 	map.position = Vector2(1050, 28)
 	map.size = Vector2(202, 202)
 	map.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -384,13 +513,21 @@ func show_menu() -> void:
 	pursuit.set_target_visible(false)
 	escape.hide()
 	escape.set_patrols_visible(false)
+	quick_pickup.hide()
+	quick_pickup.stop()
 	mode_menu.hide()
 	result_panel.hide()
+	if city_select != null: city_select.hide()
 	menu.show()
 	hud.hide()
 	pause_panel.hide()
-	load_button.disabled = read_save().is_empty()
+	load_button.disabled = not _has_save()
 	_focus_first(menu)
+
+func _has_save() -> bool:
+	if not FileAccess.file_exists(save_path): return false
+	var data: Variant = JSON.parse_string(FileAccess.get_file_as_string(save_path))
+	return data is Dictionary and data.get("version") == 1
 
 func _focus_first(parent: Control) -> void:
 	for child in parent.get_children():
@@ -403,6 +540,7 @@ func start_new_game(mode := "free") -> void:
 	delivery.stop()
 	pursuit.stop()
 	escape.stop()
+	quick_pickup.stop()
 	if game_mode == "escape" and car.vehicle_data.category == "police":
 		car.set_vehicle(Catalog.default_id())
 		car_button.text = "COCHE: " + car.vehicle_name() + "   ↻"
@@ -418,6 +556,7 @@ func start_new_game(mode := "free") -> void:
 	if game_mode == "delivery": delivery.start()
 	if game_mode == "pursuit": pursuit.start()
 	if game_mode == "escape": escape.start()
+	if game_mode == "quick_pickup": quick_pickup.start()
 	save_game()
 	if game_mode == "delivery":
 		_delivery_changed()
@@ -428,7 +567,10 @@ func start_new_game(mode := "free") -> void:
 	if game_mode == "escape":
 		_toast("Aléjate de todas las patrullas y mantén la distancia.")
 		return
-	_toast("Bienvenido a Puerto Cobre. La ciudad es tuya.")
+	if game_mode == "quick_pickup":
+		_toast("¡Ve a por la moneda! Cada nueva recogida aparece en otra zona.")
+		return
+	_toast("Bienvenido a %s. La ciudad es tuya." % city.profile.name.to_lower().capitalize())
 
 func _begin_driving() -> void:
 	car.speed = 0
@@ -447,13 +589,20 @@ func _begin_driving() -> void:
 	mode_menu.hide()
 	result_panel.hide()
 	delivery.visible = game_mode == "delivery"
-	mission_panel.visible = game_mode in ["delivery", "pursuit", "escape"]
+	quick_pickup.visible = game_mode == "quick_pickup"
+	mission_panel.visible = game_mode in ["delivery", "pursuit", "escape", "quick_pickup"]
 	pause_panel.hide()
 	hud.show()
 	var focused := get_viewport().gui_get_focus_owner()
 	if focused: focused.release_focus()
 
 func load_game() -> void:
+	var raw: Variant = JSON.parse_string(FileAccess.get_file_as_string(save_path)) if FileAccess.file_exists(save_path) else null
+	if raw is Dictionary:
+		var saved_city := str(raw.get("city_id", "barcelona"))
+		if saved_city in ["barcelona", "paris", "miami", "los_angeles"] and saved_city != selected_city:
+			selected_city = saved_city
+			_replace_world()
 	var data := read_save()
 	if data.is_empty():
 		load_button.disabled = true
@@ -463,6 +612,7 @@ func load_game() -> void:
 	delivery.stop()
 	pursuit.stop()
 	escape.stop()
+	quick_pickup.stop()
 	car.position = Vector2(float(data.x), float(data.y))
 	car.set_vehicle(str(data.get("vehicle_id", Catalog.default_id())))
 	car_button.text = "COCHE: " + car.vehicle_name() + "   ↻"
@@ -479,6 +629,9 @@ func load_game() -> void:
 	if game_mode == "escape":
 		escape.restore(data.escape)
 		if escape.phase == "failed": _escape_failed()
+	if game_mode == "quick_pickup":
+		quick_pickup.restore(data.quick_pickup)
+		if quick_pickup.phase == "failed": _quick_pickup_failed()
 	_toast("Ciudad actualizada. Coche llevado a la avenida." if data.get("_relocated", false) else "Partida cargada. Buen viaje.")
 
 func read_save() -> Dictionary:
@@ -501,7 +654,8 @@ func read_save() -> Dictionary:
 	var city_version = data.get("city_version", 1)
 	if not (city_version is int or city_version is float): return {}
 	if not is_finite(float(city_version)) or city_version < 1: return {}
-	if data.get("mode", "free") not in ["free", "delivery", "pursuit", "escape"]: return {}
+	if data.get("mode", "free") not in ["free", "delivery", "pursuit", "escape", "quick_pickup"]: return {}
+	if data.get("city_id", "barcelona") not in ["barcelona", "paris", "miami", "los_angeles"]: return {}
 	if data.has("signal_clock"):
 		if not (data.signal_clock is float or data.signal_clock is int) or not is_finite(float(data.signal_clock)) or data.signal_clock < 0 or data.signal_clock >= 32: return {}
 	if city_version < 4 and not _migrate_city_details(data): return {}
@@ -509,6 +663,7 @@ func read_save() -> Dictionary:
 	if data.get("mode", "free") == "pursuit":
 		if vehicle_id != "police_interceptor" or not pursuit.valid_save(data.get("pursuit")): return {}
 	if data.get("mode", "free") == "escape" and not escape.valid_save(data.get("escape")): return {}
+	if data.get("mode", "free") == "quick_pickup" and not quick_pickup.valid_save(data.get("quick_pickup")): return {}
 	var saved_position := Vector2(float(data.x), float(data.y))
 	var car_clearance := Catalog.vector(definition.collision_size).length() / 2
 	if not city.is_safe_position(saved_position) or (city_version < 4 and city.near_roundabout(saved_position) and not city.street_clear(saved_position, car_clearance)):
@@ -561,12 +716,13 @@ func _migrate_actor(actor: Dictionary) -> bool:
 
 func save_game() -> bool:
 	if not playing: return false
-	var data := {"version": 1, "city_version": city.LAYOUT_VERSION, "vehicle_id": car.vehicle_id, "x": car.position.x, "y": car.position.y, "angle": car.rotation, "distance": car.distance_driven, "health": car.health}
+	var data := {"version": 1, "city_version": city.LAYOUT_VERSION, "city_id": selected_city, "vehicle_id": car.vehicle_id, "x": car.position.x, "y": car.position.y, "angle": car.rotation, "distance": car.distance_driven, "health": car.health}
 	data["signal_clock"] = city.details.clock
 	data["mode"] = game_mode
 	if game_mode == "delivery": data["delivery"] = delivery.serialize()
 	if game_mode == "pursuit": data["pursuit"] = pursuit.serialize()
 	if game_mode == "escape": data["escape"] = escape.serialize()
+	if game_mode == "quick_pickup": data["quick_pickup"] = quick_pickup.serialize()
 	var file := FileAccess.open(save_path + ".tmp", FileAccess.WRITE)
 	if file == null:
 		_toast("No se pudo guardar la partida.")
@@ -585,6 +741,7 @@ func resume_game() -> void:
 	if game_mode == "delivery" and delivery.phase == "failed": return
 	if game_mode == "pursuit" and pursuit.phase == "failed": return
 	if game_mode == "escape" and escape.phase == "failed": return
+	if game_mode == "quick_pickup" and quick_pickup.phase == "failed": return
 	paused = false
 	car.enabled = true
 	pause_panel.hide()
@@ -601,6 +758,9 @@ func _input(event: InputEvent) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED if full else DisplayServer.WINDOW_MODE_FULLSCREEN)
 	if event.is_action_pressed("pause_game") and mode_menu.visible:
 		show_menu()
+		get_viewport().set_input_as_handled()
+	if event.is_action_pressed("pause_game") and city_select.visible:
+		_city_select_back()
 		get_viewport().set_input_as_handled()
 	if event.is_action_pressed("pause_game") and playing and not result_panel.visible:
 		if paused:
@@ -629,7 +789,7 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if not playing: return
 	car.on_sidewalk = city.is_sidewalk(car.position)
-	district_label.text = "PUERTO COBRE / " + city.district_at(car.position)
+	district_label.text = str(city.profile.name) + " / " + city.district_at(car.position)
 	var units := Catalog.units()
 	speed_label.text = "%03d" % int(absf(car.speed) * float(units.speed_to_kmh))
 	distance_label.text = "%.2f km recorridos" % (car.distance_driven / float(units.distance_units_per_km))
@@ -679,6 +839,14 @@ func _process(delta: float) -> void:
 			mission_timer.text = "HUIDA %d%% · ARRESTO %d%%" % [roundi(escape.escape_time / escape.escape_duration() * 100), roundi(escape.arrest / escape.arrest_duration() * 100)]
 			var distance: float = escape.nearest_distance()
 			mission_detail.text = "Pierde a todas durante %d s · Más cercana: %d m" % [ceili(escape.escape_duration()), roundi(distance * 1000 / float(units.distance_units_per_km))] if is_finite(distance) else "Patrullas inutilizadas. Mantente libre unos segundos."
+	if game_mode == "quick_pickup":
+		if not paused: quick_pickup.tick(delta)
+		mission_label.text = "RECOGIDA RÁPIDA · %d MONEDAS" % quick_pickup.collected
+		mission_timer.add_theme_font_size_override("font_size", 30)
+		var seconds := ceili(quick_pickup.remaining)
+		mission_timer.text = "%02d:%02d" % [seconds / 60, seconds % 60]
+		mission_timer.add_theme_color_override("font_color", Color("e87b68") if seconds <= 10 else CREAM)
+		mission_detail.text = "%s · Moneda a %d m" % [city.district_at(quick_pickup.target_position()), roundi(car.position.distance_to(quick_pickup.target_position()) * 1000.0 / float(units.distance_units_per_km))]
 	if not paused:
 		autosave_timer += delta
 		if autosave_timer >= 30:

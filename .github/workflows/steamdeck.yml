@@ -63,7 +63,7 @@ jobs:
 
           godot --headless \
             --path . \
-            --export-release "Linux" \
+            --export-release "Steam Deck (Linux)" \
             build/MiJuego.x86_64
 
           test -s build/MiJuego.x86_64

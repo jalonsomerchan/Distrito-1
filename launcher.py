@@ -12,7 +12,7 @@ import zipfile
 from pathlib import Path
 
 # CAMBIAR POR TU USUARIO Y REPOSITORIO
-REPO = "jalonsomerchan/RDistrito-1"
+REPO = "jalonsomerchan/Distrito-1"
 
 BASE = Path.home() / "Games" / "Distrito-1"
 GAME = BASE / "juego"

@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/delivery_truck_sheet.png",
+  "shared_scale": 0.48951048951048953,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/delivery_truck.png",
+      "cell": 0,
+      "crop": [
+        101,
+        54,
+        386,
+        667
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/delivery_truck_damage_1.png",
+      "cell": 1,
+      "crop": [
+        95,
+        55,
+        379,
+        667
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/delivery_truck_damage_2.png",
+      "cell": 2,
+      "crop": [
+        82,
+        55,
+        367,
+        668
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/delivery_truck_damage_3.png",
+      "cell": 3,
+      "crop": [
+        67,
+        55,
+        352,
+        667
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/delivery_truck_damage_4.png",
+      "cell": 4,
+      "crop": [
+        53,
+        56,
+        339,
+        668
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

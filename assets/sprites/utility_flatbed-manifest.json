@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/utility_flatbed_sheet.png",
+  "shared_scale": 0.48951048951048953,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/utility_flatbed.png",
+      "cell": 0,
+      "crop": [
+        96,
+        52,
+        382,
+        674
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/utility_flatbed_damage_1.png",
+      "cell": 1,
+      "crop": [
+        86,
+        52,
+        372,
+        674
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/utility_flatbed_damage_2.png",
+      "cell": 2,
+      "crop": [
+        76,
+        52,
+        362,
+        674
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/utility_flatbed_damage_3.png",
+      "cell": 3,
+      "crop": [
+        65,
+        52,
+        351,
+        676
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/utility_flatbed_damage_4.png",
+      "cell": 4,
+      "crop": [
+        55,
+        52,
+        341,
+        678
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

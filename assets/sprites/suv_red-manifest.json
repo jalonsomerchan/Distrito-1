@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/suv_red_sheet.png",
+  "shared_scale": 0.41543026706231456,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/suv_red.png",
+      "cell": 0,
+      "crop": [
+        65,
+        37,
+        401,
+        687
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/suv_red_damage_1.png",
+      "cell": 1,
+      "crop": [
+        63,
+        37,
+        400,
+        687
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/suv_red_damage_2.png",
+      "cell": 2,
+      "crop": [
+        61,
+        37,
+        397,
+        687
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/suv_red_damage_3.png",
+      "cell": 3,
+      "crop": [
+        56,
+        37,
+        392,
+        687
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/suv_red_damage_4.png",
+      "cell": 4,
+      "crop": [
+        53,
+        37,
+        389,
+        687
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "input": "assets/raw/city_details_props.png",
+  "rows": 2,
+  "cols": 2,
+  "threshold": 100,
+  "edge_threshold": 150,
+  "component_mode": "largest",
+  "component_padding": 2,
+  "min_component_area": 100,
+  "edge_touch_margin": 0,
+  "accepted": [
+    {
+      "index": 0,
+      "label": "beach-umbrella",
+      "grid": [
+        0,
+        0
+      ],
+      "source_box": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "component_mode": "largest",
+      "component_count": 1,
+      "selected_component_area": 139536,
+      "selected_component_bbox": [
+        100,
+        86,
+        520,
+        532
+      ],
+      "crop_bbox": [
+        100,
+        86,
+        520,
+        532
+      ],
+      "padded_crop_bbox": [
+        98,
+        84,
+        522,
+        534
+      ],
+      "edge_touch": false,
+      "output_size": [
+        424,
+        450
+      ],
+      "status": "accepted",
+      "image": "assets/environment/details/beach-umbrella/prop.png"
+    },
+    {
+      "index": 1,
+      "label": "beach-lounger",
+      "grid": [
+        0,
+        1
+      ],
+      "source_box": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "component_mode": "largest",
+      "component_count": 1,
+      "selected_component_area": 94187,
+      "selected_component_bbox": [
+        204,
+        64,
+        415,
+        555
+      ],
+      "crop_bbox": [
+        204,
+        64,
+        415,
+        555
+      ],
+      "padded_crop_bbox": [
+        202,
+        62,
+        417,
+        557
+      ],
+      "edge_touch": false,
+      "output_size": [
+        215,
+        495
+      ],
+      "status": "accepted",
+      "image": "assets/environment/details/beach-lounger/prop.png"
+    },
+    {
+      "index": 2,
+      "label": "bench",
+      "grid": [
+        1,
+        0
+      ],
+      "source_box": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "component_mode": "largest",
+      "component_count": 1,
+      "selected_component_area": 101469,
+      "selected_component_bbox": [
+        80,
+        161,
+        539,
+        458
+      ],
+      "crop_bbox": [
+        80,
+        161,
+        539,
+        458
+      ],
+      "padded_crop_bbox": [
+        78,
+        159,
+        541,
+        460
+      ],
+      "edge_touch": false,
+      "output_size": [
+        463,
+        301
+      ],
+      "status": "accepted",
+      "image": "assets/environment/details/bench/prop.png"
+    },
+    {
+      "index": 3,
+      "label": "traffic-signal",
+      "grid": [
+        1,
+        1
+      ],
+      "source_box": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "component_mode": "largest",
+      "component_count": 1,
+      "selected_component_area": 66610,
+      "selected_component_bbox": [
+        227,
+        83,
+        392,
+        531
+      ],
+      "crop_bbox": [
+        227,
+        83,
+        392,
+        531
+      ],
+      "padded_crop_bbox": [
+        225,
+        81,
+        394,
+        533
+      ],
+      "edge_touch": false,
+      "output_size": [
+        169,
+        452
+      ],
+      "status": "accepted",
+      "image": "assets/environment/details/traffic-signal/prop.png"
+    }
+  ],
+  "rejected": [],
+  "edge_touch_props": []
+}

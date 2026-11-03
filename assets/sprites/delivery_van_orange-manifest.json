@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/delivery_van_orange_sheet.png",
+  "shared_scale": 0.4307692307692308,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/delivery_van_orange.png",
+      "cell": 0,
+      "crop": [
+        73,
+        40,
+        396,
+        691
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/delivery_van_orange_damage_1.png",
+      "cell": 1,
+      "crop": [
+        63,
+        40,
+        388,
+        691
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/delivery_van_orange_damage_2.png",
+      "cell": 2,
+      "crop": [
+        55,
+        40,
+        380,
+        691
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/delivery_van_orange_damage_3.png",
+      "cell": 3,
+      "crop": [
+        45,
+        40,
+        370,
+        691
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/delivery_van_orange_damage_4.png",
+      "cell": 4,
+      "crop": [
+        37,
+        40,
+        362,
+        691
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

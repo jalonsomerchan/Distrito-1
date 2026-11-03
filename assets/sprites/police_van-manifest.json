@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/police_van_sheet.png",
+  "shared_scale": 0.4878048780487805,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/police_van.png",
+      "cell": 0,
+      "crop": [
+        85,
+        29,
+        371,
+        695
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/police_van_damage_1.png",
+      "cell": 1,
+      "crop": [
+        79,
+        29,
+        365,
+        695
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/police_van_damage_2.png",
+      "cell": 2,
+      "crop": [
+        74,
+        29,
+        361,
+        695
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/police_van_damage_3.png",
+      "cell": 3,
+      "crop": [
+        70,
+        29,
+        355,
+        695
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/police_van_damage_4.png",
+      "cell": 4,
+      "crop": [
+        64,
+        29,
+        350,
+        695
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

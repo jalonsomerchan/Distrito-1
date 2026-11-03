@@ -1,0 +1,66 @@
+{
+  "source": "assets/raw/city_details_props.png",
+  "tool": "built-in image_gen",
+  "props": {
+    "beach_umbrella": {
+      "cell": 0,
+      "crop": [
+        104,
+        90,
+        524,
+        536
+      ],
+      "size": [
+        362,
+        384
+      ],
+      "alpha": true,
+      "edge_touch": false
+    },
+    "beach_lounger": {
+      "cell": 1,
+      "crop": [
+        208,
+        68,
+        419,
+        559
+      ],
+      "size": [
+        165,
+        384
+      ],
+      "alpha": true,
+      "edge_touch": false
+    },
+    "bench": {
+      "cell": 2,
+      "crop": [
+        84,
+        165,
+        543,
+        461
+      ],
+      "size": [
+        384,
+        248
+      ],
+      "alpha": true,
+      "edge_touch": false
+    },
+    "traffic_signal": {
+      "cell": 3,
+      "crop": [
+        231,
+        87,
+        396,
+        535
+      ],
+      "size": [
+        141,
+        384
+      ],
+      "alpha": true,
+      "edge_touch": false
+    }
+  }
+}

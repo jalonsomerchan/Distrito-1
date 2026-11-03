@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/race_drift_sheet.png",
+  "shared_scale": 0.48951048951048953,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/race_drift.png",
+      "cell": 0,
+      "crop": [
+        123,
+        44,
+        408,
+        683
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_drift_damage_1.png",
+      "cell": 1,
+      "crop": [
+        98,
+        44,
+        384,
+        683
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_drift_damage_2.png",
+      "cell": 2,
+      "crop": [
+        74,
+        44,
+        360,
+        683
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_drift_damage_3.png",
+      "cell": 3,
+      "crop": [
+        48,
+        40,
+        334,
+        687
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_drift_damage_4.png",
+      "cell": 4,
+      "crop": [
+        24,
+        38,
+        310,
+        686
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

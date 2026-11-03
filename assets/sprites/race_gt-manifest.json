@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/race_gt_sheet.png",
+  "shared_scale": 0.44871794871794873,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/race_gt.png",
+      "cell": 0,
+      "crop": [
+        80,
+        38,
+        390,
+        679
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_gt_damage_1.png",
+      "cell": 1,
+      "crop": [
+        74,
+        38,
+        383,
+        679
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_gt_damage_2.png",
+      "cell": 2,
+      "crop": [
+        66,
+        38,
+        376,
+        679
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_gt_damage_3.png",
+      "cell": 3,
+      "crop": [
+        59,
+        38,
+        369,
+        679
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_gt_damage_4.png",
+      "cell": 4,
+      "crop": [
+        52,
+        38,
+        364,
+        679
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/pickup_work_sheet.png",
+  "shared_scale": 0.48109965635738833,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/pickup_work.png",
+      "cell": 0,
+      "crop": [
+        86,
+        40,
+        376,
+        687
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/pickup_work_damage_1.png",
+      "cell": 1,
+      "crop": [
+        80,
+        40,
+        370,
+        687
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/pickup_work_damage_2.png",
+      "cell": 2,
+      "crop": [
+        74,
+        40,
+        364,
+        687
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/pickup_work_damage_3.png",
+      "cell": 3,
+      "crop": [
+        66,
+        40,
+        356,
+        687
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/pickup_work_damage_4.png",
+      "cell": 4,
+      "crop": [
+        57,
+        38,
+        348,
+        687
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

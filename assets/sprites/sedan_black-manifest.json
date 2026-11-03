@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/sedan_black_sheet.png",
+  "shared_scale": 0.4846715328467153,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/sedan_black.png",
+      "cell": 0,
+      "crop": [
+        93,
+        23,
+        372,
+        708
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/sedan_black_damage_1.png",
+      "cell": 1,
+      "crop": [
+        86,
+        23,
+        366,
+        708
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/sedan_black_damage_2.png",
+      "cell": 2,
+      "crop": [
+        78,
+        23,
+        359,
+        708
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/sedan_black_damage_3.png",
+      "cell": 3,
+      "crop": [
+        70,
+        23,
+        350,
+        708
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/sedan_black_damage_4.png",
+      "cell": 4,
+      "crop": [
+        61,
+        23,
+        341,
+        708
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

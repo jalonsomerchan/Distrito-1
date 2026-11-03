@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/taxi_yellow_sheet.png",
+  "shared_scale": 0.45454545454545453,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/taxi_yellow.png",
+      "cell": 0,
+      "crop": [
+        95,
+        52,
+        403,
+        680
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/taxi_yellow_damage_1.png",
+      "cell": 1,
+      "crop": [
+        80,
+        53,
+        387,
+        680
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/taxi_yellow_damage_2.png",
+      "cell": 2,
+      "crop": [
+        64,
+        53,
+        372,
+        680
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/taxi_yellow_damage_3.png",
+      "cell": 3,
+      "crop": [
+        48,
+        53,
+        355,
+        680
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/taxi_yellow_damage_4.png",
+      "cell": 4,
+      "crop": [
+        32,
+        52,
+        339,
+        680
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

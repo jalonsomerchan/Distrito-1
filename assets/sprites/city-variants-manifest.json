@@ -1,0 +1,214 @@
+{
+  "sources": {
+    "buildings": "assets/raw/building_variants_3x3.png",
+    "sidewalks": "assets/raw/sidewalk_variants_2x2.png"
+  },
+  "buildings": [
+    {
+      "name": "building_06",
+      "source": "assets/raw/building_variants_3x3.png",
+      "cell": 0,
+      "crop": [
+        32,
+        34,
+        392,
+        392
+      ],
+      "size": [
+        360,
+        358
+      ],
+      "alpha": true,
+      "edge_touch": false
+    },
+    {
+      "name": "building_07",
+      "source": "assets/raw/building_variants_3x3.png",
+      "cell": 1,
+      "crop": [
+        29,
+        33,
+        389,
+        392
+      ],
+      "size": [
+        360,
+        359
+      ],
+      "alpha": true,
+      "edge_touch": false
+    },
+    {
+      "name": "building_08",
+      "source": "assets/raw/building_variants_3x3.png",
+      "cell": 2,
+      "crop": [
+        27,
+        36,
+        390,
+        395
+      ],
+      "size": [
+        363,
+        359
+      ],
+      "alpha": true,
+      "edge_touch": false
+    },
+    {
+      "name": "building_09",
+      "source": "assets/raw/building_variants_3x3.png",
+      "cell": 3,
+      "crop": [
+        32,
+        31,
+        391,
+        390
+      ],
+      "size": [
+        359,
+        359
+      ],
+      "alpha": true,
+      "edge_touch": false
+    },
+    {
+      "name": "building_10",
+      "source": "assets/raw/building_variants_3x3.png",
+      "cell": 4,
+      "crop": [
+        30,
+        30,
+        389,
+        390
+      ],
+      "size": [
+        359,
+        360
+      ],
+      "alpha": true,
+      "edge_touch": false
+    },
+    {
+      "name": "building_11",
+      "source": "assets/raw/building_variants_3x3.png",
+      "cell": 5,
+      "crop": [
+        27,
+        31,
+        387,
+        390
+      ],
+      "size": [
+        360,
+        359
+      ],
+      "alpha": true,
+      "edge_touch": false
+    },
+    {
+      "name": "building_12",
+      "source": "assets/raw/building_variants_3x3.png",
+      "cell": 6,
+      "crop": [
+        24,
+        4,
+        399,
+        393
+      ],
+      "size": [
+        375,
+        389
+      ],
+      "alpha": true,
+      "edge_touch": false
+    },
+    {
+      "name": "building_13",
+      "source": "assets/raw/building_variants_3x3.png",
+      "cell": 7,
+      "crop": [
+        30,
+        28,
+        389,
+        389
+      ],
+      "size": [
+        359,
+        361
+      ],
+      "alpha": true,
+      "edge_touch": false
+    },
+    {
+      "name": "building_14",
+      "source": "assets/raw/building_variants_3x3.png",
+      "cell": 8,
+      "crop": [
+        30,
+        24,
+        387,
+        387
+      ],
+      "size": [
+        357,
+        363
+      ],
+      "alpha": true,
+      "edge_touch": false
+    }
+  ],
+  "sidewalks": [
+    {
+      "name": "sidewalk_02",
+      "source": "assets/raw/sidewalk_variants_2x2.png",
+      "cell": 0,
+      "crop": [
+        12,
+        10,
+        620,
+        616
+      ],
+      "size": [
+        608,
+        606
+      ],
+      "alpha": true,
+      "edge_touch": false
+    },
+    {
+      "name": "sidewalk_03",
+      "source": "assets/raw/sidewalk_variants_2x2.png",
+      "cell": 1,
+      "crop": [
+        8,
+        10,
+        617,
+        616
+      ],
+      "size": [
+        609,
+        606
+      ],
+      "alpha": true,
+      "edge_touch": false
+    },
+    {
+      "name": "sidewalk_04",
+      "source": "assets/raw/sidewalk_variants_2x2.png",
+      "cell": 2,
+      "crop": [
+        10,
+        7,
+        619,
+        615
+      ],
+      "size": [
+        609,
+        608
+      ],
+      "alpha": true,
+      "edge_touch": false
+    }
+  ]
+}

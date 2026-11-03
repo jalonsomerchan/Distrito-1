@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/wagon_blue_sheet.png",
+  "shared_scale": 0.438871473354232,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/wagon_blue.png",
+      "cell": 0,
+      "crop": [
+        88,
+        29,
+        407,
+        699
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/wagon_blue_damage_1.png",
+      "cell": 1,
+      "crop": [
+        79,
+        29,
+        398,
+        699
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/wagon_blue_damage_2.png",
+      "cell": 2,
+      "crop": [
+        65,
+        29,
+        383,
+        699
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/wagon_blue_damage_3.png",
+      "cell": 3,
+      "crop": [
+        48,
+        29,
+        366,
+        699
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/wagon_blue_damage_4.png",
+      "cell": 4,
+      "crop": [
+        29,
+        29,
+        346,
+        699
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

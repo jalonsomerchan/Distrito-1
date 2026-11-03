@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/race_rally_sheet.png",
+  "shared_scale": 0.4472843450479233,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/race_rally.png",
+      "cell": 0,
+      "crop": [
+        72,
+        43,
+        385,
+        678
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_rally_damage_1.png",
+      "cell": 1,
+      "crop": [
+        66,
+        43,
+        378,
+        679
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_rally_damage_2.png",
+      "cell": 2,
+      "crop": [
+        60,
+        43,
+        373,
+        679
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_rally_damage_3.png",
+      "cell": 3,
+      "crop": [
+        54,
+        42,
+        367,
+        678
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_rally_damage_4.png",
+      "cell": 4,
+      "crop": [
+        48,
+        42,
+        360,
+        678
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

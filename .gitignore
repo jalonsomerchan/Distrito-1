@@ -1,0 +1,21 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+/build/
+/tests/.smoke-save.json*
+/tests/.damage-save.json*
+/tests/.city-save.json*
+/tests/.traffic-save.json*
+/tests/.catalog-save.json*
+/tests/.truck-save.json*
+/tests/.world-save.json*
+
+/tests/.delivery-save.json*
+
+/tests/.pursuit-save.json*
+
+/tests/.escape-save.json*
+
+/tests/.city-details-save.json*
+
+/tests/.wilderness-save.json*

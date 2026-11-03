@@ -1,0 +1,5 @@
+BUILDING ROOFS — built-in image_gen
+A 3x3 sprite sheet of nine weathered HD top-down city rooftops: water tanks, HVAC, brick fire escape, solar panels, rooftop garden, ribbed warehouse, art deco circular skylights, industrial pipes, rooftop pool. Each is a distinct square roof with parapet, muted 1980s game art, magenta gutters.
+
+SIDEWALKS — built-in image_gen
+A 2x2 sheet of four top-down block sidewalk surfaces with consistent raised curb thickness: cracked large concrete slabs, muted red brick pavers, pale small stone pavers, dark gray slabs with tactile strip. Magenta gutters.

@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/mail_van_sheet.png",
+  "shared_scale": 0.4560260586319218,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/mail_van.png",
+      "cell": 0,
+      "crop": [
+        107,
+        77,
+        414,
+        647
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/mail_van_damage_1.png",
+      "cell": 1,
+      "crop": [
+        86,
+        77,
+        393,
+        647
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/mail_van_damage_2.png",
+      "cell": 2,
+      "crop": [
+        64,
+        77,
+        371,
+        647
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/mail_van_damage_3.png",
+      "cell": 3,
+      "crop": [
+        41,
+        77,
+        348,
+        647
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/mail_van_damage_4.png",
+      "cell": 4,
+      "crop": [
+        20,
+        77,
+        327,
+        647
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

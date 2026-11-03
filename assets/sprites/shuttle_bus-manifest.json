@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/shuttle_bus_sheet.png",
+  "shared_scale": 0.4861111111111111,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/shuttle_bus.png",
+      "cell": 0,
+      "crop": [
+        103,
+        54,
+        390,
+        670
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/shuttle_bus_damage_1.png",
+      "cell": 1,
+      "crop": [
+        89,
+        54,
+        376,
+        670
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/shuttle_bus_damage_2.png",
+      "cell": 2,
+      "crop": [
+        75,
+        54,
+        362,
+        670
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/shuttle_bus_damage_3.png",
+      "cell": 3,
+      "crop": [
+        60,
+        54,
+        347,
+        670
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/shuttle_bus_damage_4.png",
+      "cell": 4,
+      "crop": [
+        46,
+        54,
+        334,
+        670
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

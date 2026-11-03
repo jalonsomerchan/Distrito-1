@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/race_formula_sheet.png",
+  "shared_scale": 0.438871473354232,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/race_formula.png",
+      "cell": 0,
+      "crop": [
+        74,
+        47,
+        393,
+        677
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_formula_damage_1.png",
+      "cell": 1,
+      "crop": [
+        68,
+        47,
+        385,
+        677
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_formula_damage_2.png",
+      "cell": 2,
+      "crop": [
+        61,
+        47,
+        378,
+        677
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_formula_damage_3.png",
+      "cell": 3,
+      "crop": [
+        53,
+        47,
+        370,
+        677
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_formula_damage_4.png",
+      "cell": 4,
+      "crop": [
+        46,
+        47,
+        365,
+        672
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

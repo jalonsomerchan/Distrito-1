@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/compact_white_sheet.png",
+  "shared_scale": 0.4069767441860465,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/compact_white.png",
+      "cell": 0,
+      "crop": [
+        59,
+        91,
+        402,
+        633
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/compact_white_damage_1.png",
+      "cell": 1,
+      "crop": [
+        53,
+        91,
+        395,
+        633
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/compact_white_damage_2.png",
+      "cell": 2,
+      "crop": [
+        46,
+        91,
+        389,
+        633
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/compact_white_damage_3.png",
+      "cell": 3,
+      "crop": [
+        38,
+        91,
+        381,
+        633
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/compact_white_damage_4.png",
+      "cell": 4,
+      "crop": [
+        31,
+        91,
+        375,
+        633
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

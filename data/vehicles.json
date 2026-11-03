@@ -1,0 +1,1202 @@
+{
+  "version": 1,
+  "default_vehicle_id": "muscle_red",
+  "units": {
+    "speed_to_kmh": 0.18,
+    "distance_units_per_km": 10000.0
+  },
+  "damage": {
+    "min_impact_speed": 35.0,
+    "cooldown": 0.35,
+    "reference_speed": 610.0,
+    "base_damage": 75.0,
+    "exponent": 1.7,
+    "thresholds": [
+      0.75,
+      0.5,
+      0.25,
+      0.0
+    ],
+    "names": [
+      "BUEN ESTADO",
+      "DAÑOS LEVES",
+      "DAÑOS MEDIOS",
+      "DAÑOS GRAVES",
+      "DESTROZADO"
+    ]
+  },
+  "defaults": {
+    "max_speed": 610.0,
+    "acceleration": 260.0,
+    "reverse_speed": 190.0,
+    "reverse_acceleration": 180.0,
+    "braking": 550.0,
+    "coast_deceleration": 70.0,
+    "sidewalk_max_speed": 240.0,
+    "grip": 10.0,
+    "drift_grip": 3.0,
+    "steering_rate": 1.75,
+    "handbrake_steering_rate": 2.6,
+    "steering_response_speed": 100.0,
+    "handbrake_deceleration": 280.0,
+    "max_health": 100.0,
+    "damage_multiplier": 1.0,
+    "player_allowed": true,
+    "bots_allowed": true,
+    "draw_size": [
+      36,
+      66
+    ],
+    "collision_size": [
+      27,
+      53
+    ],
+    "ai": {
+      "cruise_min": 145.0,
+      "cruise_max": 209.0,
+      "acceleration": 100.0,
+      "braking": 420.0,
+      "corner_speed": 100.0,
+      "spawn_weight": 1,
+      "follow_distance": 62.0,
+      "corner_lookahead": 65.0,
+      "lane_offset": 65.0,
+      "turn_radius": 44.0
+    }
+  },
+  "vehicles": [
+    {
+      "id": "muscle_red",
+      "name": "MUSCLE ROJO",
+      "category": "muscle",
+      "description": "Potente y rápido, con agarre medio.",
+      "sprites": [
+        "res://assets/sprites/car_01.png",
+        "res://assets/sprites/car_01_damage_1.png",
+        "res://assets/sprites/car_01_damage_2.png",
+        "res://assets/sprites/car_01_damage_3.png",
+        "res://assets/sprites/car_01_damage_4.png"
+      ]
+    },
+    {
+      "id": "sedan_blue",
+      "name": "SEDÁN AZUL",
+      "category": "sedan",
+      "description": "Equilibrado y resistente, habitual en el tráfico.",
+      "max_speed": 520.0,
+      "acceleration": 225.0,
+      "grip": 12.0,
+      "max_health": 125.0,
+      "damage_multiplier": 0.85,
+      "ai": {
+        "spawn_weight": 4
+      },
+      "sprites": [
+        "res://assets/sprites/car_02.png",
+        "res://assets/sprites/car_02_damage_1.png",
+        "res://assets/sprites/car_02_damage_2.png",
+        "res://assets/sprites/car_02_damage_3.png",
+        "res://assets/sprites/car_02_damage_4.png"
+      ]
+    },
+    {
+      "id": "compact_yellow",
+      "name": "COMPACTO AMARILLO",
+      "category": "compact",
+      "description": "Ágil y ligero; acelera bien, pero soporta menos golpes.",
+      "max_speed": 480.0,
+      "acceleration": 290.0,
+      "grip": 14.0,
+      "max_health": 80.0,
+      "damage_multiplier": 1.15,
+      "steering_rate": 2.05,
+      "reverse_speed": 170.0,
+      "ai": {
+        "spawn_weight": 4,
+        "cruise_min": 140.0,
+        "cruise_max": 190.0
+      },
+      "sprites": [
+        "res://assets/sprites/car_03.png",
+        "res://assets/sprites/car_03_damage_1.png",
+        "res://assets/sprites/car_03_damage_2.png",
+        "res://assets/sprites/car_03_damage_3.png",
+        "res://assets/sprites/car_03_damage_4.png"
+      ]
+    },
+    {
+      "id": "classic_green",
+      "name": "CLÁSICO VERDE",
+      "category": "classic",
+      "description": "Clásico exclusivo del jugador, con menos agarre.",
+      "max_speed": 560.0,
+      "acceleration": 210.0,
+      "grip": 8.0,
+      "max_health": 115.0,
+      "bots_allowed": false,
+      "ai": {
+        "spawn_weight": 0
+      },
+      "sprites": [
+        "res://assets/sprites/car_04.png",
+        "res://assets/sprites/car_04_damage_1.png",
+        "res://assets/sprites/car_04_damage_2.png",
+        "res://assets/sprites/car_04_damage_3.png",
+        "res://assets/sprites/car_04_damage_4.png"
+      ]
+    },
+    {
+      "id": "wagon_silver",
+      "name": "FAMILIAR PLATEADO",
+      "category": "wagon",
+      "description": "Lento y robusto, adecuado para resistir choques.",
+      "max_speed": 450.0,
+      "acceleration": 180.0,
+      "grip": 11.0,
+      "max_health": 150.0,
+      "damage_multiplier": 0.75,
+      "steering_rate": 1.55,
+      "reverse_speed": 160.0,
+      "ai": {
+        "spawn_weight": 3,
+        "cruise_min": 130.0,
+        "cruise_max": 180.0
+      },
+      "sprites": [
+        "res://assets/sprites/car_05.png",
+        "res://assets/sprites/car_05_damage_1.png",
+        "res://assets/sprites/car_05_damage_2.png",
+        "res://assets/sprites/car_05_damage_3.png",
+        "res://assets/sprites/car_05_damage_4.png"
+      ]
+    },
+    {
+      "id": "cargo_truck",
+      "name": "CAMIÓN DE CARGA",
+      "category": "truck",
+      "description": "Camión rígido de reparto, grande, lento y muy resistente.",
+      "draw_size": [
+        58,
+        148
+      ],
+      "collision_size": [
+        48,
+        134
+      ],
+      "max_speed": 360.0,
+      "acceleration": 120.0,
+      "reverse_speed": 115.0,
+      "reverse_acceleration": 95.0,
+      "braking": 340.0,
+      "coast_deceleration": 55.0,
+      "sidewalk_max_speed": 150.0,
+      "grip": 6.5,
+      "drift_grip": 2.0,
+      "steering_rate": 1.05,
+      "handbrake_steering_rate": 1.4,
+      "steering_response_speed": 140.0,
+      "handbrake_deceleration": 190.0,
+      "max_health": 280.0,
+      "damage_multiplier": 0.55,
+      "player_allowed": true,
+      "bots_allowed": true,
+      "ai": {
+        "cruise_min": 100.0,
+        "cruise_max": 150.0,
+        "acceleration": 65.0,
+        "braking": 300.0,
+        "corner_speed": 65.0,
+        "spawn_weight": 2,
+        "follow_distance": 90.0,
+        "corner_lookahead": 120.0,
+        "lane_offset": 65.0,
+        "turn_radius": 64.0
+      },
+      "sprites": [
+        "res://assets/sprites/truck_cargo.png",
+        "res://assets/sprites/truck_cargo_damage_1.png",
+        "res://assets/sprites/truck_cargo_damage_2.png",
+        "res://assets/sprites/truck_cargo_damage_3.png",
+        "res://assets/sprites/truck_cargo_damage_4.png"
+      ]
+    },
+    {
+      "id": "police_sedan",
+      "name": "SEDÁN POLICIAL",
+      "category": "police",
+      "description": "Patrulla urbana equilibrada.",
+      "max_speed": 520,
+      "acceleration": 225,
+      "grip": 12,
+      "max_health": 145,
+      "damage_multiplier": 0.85,
+      "steering_rate": 1.8900000000000001,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 130,
+        "cruise_max": 187,
+        "acceleration": 86,
+        "braking": 360,
+        "corner_speed": 114
+      },
+      "sprites": [
+        "res://assets/sprites/police_sedan.png",
+        "res://assets/sprites/police_sedan_damage_1.png",
+        "res://assets/sprites/police_sedan_damage_2.png",
+        "res://assets/sprites/police_sedan_damage_3.png",
+        "res://assets/sprites/police_sedan_damage_4.png"
+      ]
+    },
+    {
+      "id": "police_interceptor",
+      "name": "INTERCEPTOR POLICIAL",
+      "category": "police",
+      "description": "Patrulla rápida con buena aceleración.",
+      "max_speed": 585,
+      "acceleration": 280,
+      "grip": 10,
+      "max_health": 115,
+      "damage_multiplier": 1.0,
+      "steering_rate": 1.75,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 146,
+        "cruise_max": 211,
+        "acceleration": 106,
+        "braking": 360,
+        "corner_speed": 129
+      },
+      "sprites": [
+        "res://assets/sprites/police_interceptor.png",
+        "res://assets/sprites/police_interceptor_damage_1.png",
+        "res://assets/sprites/police_interceptor_damage_2.png",
+        "res://assets/sprites/police_interceptor_damage_3.png",
+        "res://assets/sprites/police_interceptor_damage_4.png"
+      ]
+    },
+    {
+      "id": "police_suv",
+      "name": "SUV POLICIAL",
+      "category": "police",
+      "description": "Vehículo policial alto y resistente.",
+      "max_speed": 465,
+      "acceleration": 190,
+      "grip": 9,
+      "max_health": 205,
+      "damage_multiplier": 0.72,
+      "steering_rate": 1.68,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 116,
+        "cruise_max": 167,
+        "acceleration": 72,
+        "braking": 360,
+        "corner_speed": 102
+      },
+      "sprites": [
+        "res://assets/sprites/police_suv.png",
+        "res://assets/sprites/police_suv_damage_1.png",
+        "res://assets/sprites/police_suv_damage_2.png",
+        "res://assets/sprites/police_suv_damage_3.png",
+        "res://assets/sprites/police_suv_damage_4.png"
+      ]
+    },
+    {
+      "id": "police_van",
+      "name": "FURGÓN POLICIAL",
+      "category": "police",
+      "description": "Furgón pesado para operaciones especiales.",
+      "max_speed": 350,
+      "acceleration": 115,
+      "grip": 6,
+      "max_health": 300,
+      "damage_multiplier": 0.55,
+      "steering_rate": 1.47,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 88,
+        "cruise_max": 126,
+        "acceleration": 44,
+        "braking": 280,
+        "corner_speed": 77,
+        "follow_distance": 90,
+        "corner_lookahead": 120,
+        "lane_offset": 65,
+        "turn_radius": 64
+      },
+      "sprites": [
+        "res://assets/sprites/police_van.png",
+        "res://assets/sprites/police_van_damage_1.png",
+        "res://assets/sprites/police_van_damage_2.png",
+        "res://assets/sprites/police_van_damage_3.png",
+        "res://assets/sprites/police_van_damage_4.png"
+      ],
+      "draw_size": [
+        58,
+        148
+      ],
+      "collision_size": [
+        48,
+        134
+      ],
+      "reverse_speed": 115,
+      "reverse_acceleration": 95,
+      "braking": 340,
+      "coast_deceleration": 55,
+      "sidewalk_max_speed": 150,
+      "drift_grip": 2,
+      "handbrake_steering_rate": 1.4,
+      "steering_response_speed": 140,
+      "handbrake_deceleration": 190
+    },
+    {
+      "id": "race_gt",
+      "name": "GT DE CARRERAS",
+      "category": "race",
+      "description": "Gran turismo veloz con agarre firme.",
+      "max_speed": 640,
+      "acceleration": 300,
+      "grip": 14,
+      "max_health": 95,
+      "damage_multiplier": 1.0,
+      "steering_rate": 2.0300000000000002,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 160,
+        "cruise_max": 230,
+        "acceleration": 114,
+        "braking": 360,
+        "corner_speed": 141
+      },
+      "sprites": [
+        "res://assets/sprites/race_gt.png",
+        "res://assets/sprites/race_gt_damage_1.png",
+        "res://assets/sprites/race_gt_damage_2.png",
+        "res://assets/sprites/race_gt_damage_3.png",
+        "res://assets/sprites/race_gt_damage_4.png"
+      ]
+    },
+    {
+      "id": "race_formula",
+      "name": "MONOPLAZA",
+      "category": "race",
+      "description": "Coche de competición ligero y muy ágil.",
+      "max_speed": 670,
+      "acceleration": 340,
+      "grip": 16,
+      "max_health": 75,
+      "damage_multiplier": 1.2,
+      "steering_rate": 2.1,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 168,
+        "cruise_max": 241,
+        "acceleration": 129,
+        "braking": 360,
+        "corner_speed": 147
+      },
+      "sprites": [
+        "res://assets/sprites/race_formula.png",
+        "res://assets/sprites/race_formula_damage_1.png",
+        "res://assets/sprites/race_formula_damage_2.png",
+        "res://assets/sprites/race_formula_damage_3.png",
+        "res://assets/sprites/race_formula_damage_4.png"
+      ]
+    },
+    {
+      "id": "race_rally",
+      "name": "RALLY COMPACTO",
+      "category": "race",
+      "description": "Compacto preparado para curvas cerradas.",
+      "max_speed": 590,
+      "acceleration": 315,
+      "grip": 15,
+      "max_health": 90,
+      "damage_multiplier": 1.05,
+      "steering_rate": 2.1,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 148,
+        "cruise_max": 212,
+        "acceleration": 120,
+        "braking": 360,
+        "corner_speed": 130
+      },
+      "sprites": [
+        "res://assets/sprites/race_rally.png",
+        "res://assets/sprites/race_rally_damage_1.png",
+        "res://assets/sprites/race_rally_damage_2.png",
+        "res://assets/sprites/race_rally_damage_3.png",
+        "res://assets/sprites/race_rally_damage_4.png"
+      ]
+    },
+    {
+      "id": "race_muscle",
+      "name": "MUSCLE DE CARRERAS",
+      "category": "race",
+      "description": "Muscle car de aceleración contundente.",
+      "max_speed": 625,
+      "acceleration": 320,
+      "grip": 9,
+      "max_health": 105,
+      "damage_multiplier": 1.05,
+      "steering_rate": 1.68,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 156,
+        "cruise_max": 225,
+        "acceleration": 122,
+        "braking": 360,
+        "corner_speed": 138
+      },
+      "sprites": [
+        "res://assets/sprites/race_muscle.png",
+        "res://assets/sprites/race_muscle_damage_1.png",
+        "res://assets/sprites/race_muscle_damage_2.png",
+        "res://assets/sprites/race_muscle_damage_3.png",
+        "res://assets/sprites/race_muscle_damage_4.png"
+      ]
+    },
+    {
+      "id": "race_touring",
+      "name": "TURISMO DE CARRERAS",
+      "category": "race",
+      "description": "Turismo equilibrado para circuitos.",
+      "max_speed": 570,
+      "acceleration": 275,
+      "grip": 13,
+      "max_health": 110,
+      "damage_multiplier": 0.95,
+      "steering_rate": 1.96,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 142,
+        "cruise_max": 205,
+        "acceleration": 104,
+        "braking": 360,
+        "corner_speed": 125
+      },
+      "sprites": [
+        "res://assets/sprites/race_touring.png",
+        "res://assets/sprites/race_touring_damage_1.png",
+        "res://assets/sprites/race_touring_damage_2.png",
+        "res://assets/sprites/race_touring_damage_3.png",
+        "res://assets/sprites/race_touring_damage_4.png"
+      ]
+    },
+    {
+      "id": "race_drift",
+      "name": "COUPÉ DRIFT",
+      "category": "race",
+      "description": "Coupé ligero con dirección sensible.",
+      "max_speed": 600,
+      "acceleration": 290,
+      "grip": 7,
+      "max_health": 90,
+      "damage_multiplier": 1.1,
+      "steering_rate": 1.54,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 150,
+        "cruise_max": 216,
+        "acceleration": 110,
+        "braking": 360,
+        "corner_speed": 132
+      },
+      "sprites": [
+        "res://assets/sprites/race_drift.png",
+        "res://assets/sprites/race_drift_damage_1.png",
+        "res://assets/sprites/race_drift_damage_2.png",
+        "res://assets/sprites/race_drift_damage_3.png",
+        "res://assets/sprites/race_drift_damage_4.png"
+      ]
+    },
+    {
+      "id": "taxi_yellow",
+      "name": "TAXI AMARILLO",
+      "category": "service",
+      "description": "Taxi urbano rápido y reconocible.",
+      "max_speed": 490,
+      "acceleration": 235,
+      "grip": 12,
+      "max_health": 110,
+      "damage_multiplier": 0.9,
+      "steering_rate": 1.8900000000000001,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 122,
+        "cruise_max": 176,
+        "acceleration": 89,
+        "braking": 360,
+        "corner_speed": 108
+      },
+      "sprites": [
+        "res://assets/sprites/taxi_yellow.png",
+        "res://assets/sprites/taxi_yellow_damage_1.png",
+        "res://assets/sprites/taxi_yellow_damage_2.png",
+        "res://assets/sprites/taxi_yellow_damage_3.png",
+        "res://assets/sprites/taxi_yellow_damage_4.png"
+      ]
+    },
+    {
+      "id": "taxi_green",
+      "name": "TAXI VERDE",
+      "category": "service",
+      "description": "Taxi robusto para recorridos largos.",
+      "max_speed": 475,
+      "acceleration": 210,
+      "grip": 11,
+      "max_health": 130,
+      "damage_multiplier": 0.85,
+      "steering_rate": 1.82,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 119,
+        "cruise_max": 171,
+        "acceleration": 80,
+        "braking": 360,
+        "corner_speed": 104
+      },
+      "sprites": [
+        "res://assets/sprites/taxi_green.png",
+        "res://assets/sprites/taxi_green_damage_1.png",
+        "res://assets/sprites/taxi_green_damage_2.png",
+        "res://assets/sprites/taxi_green_damage_3.png",
+        "res://assets/sprites/taxi_green_damage_4.png"
+      ]
+    },
+    {
+      "id": "delivery_van_blue",
+      "name": "FURGONETA DE PAQUETES",
+      "category": "delivery",
+      "description": "Furgoneta de reparto ágil para última milla.",
+      "max_speed": 390,
+      "acceleration": 155,
+      "grip": 8,
+      "max_health": 210,
+      "damage_multiplier": 0.68,
+      "steering_rate": 1.6099999999999999,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 98,
+        "cruise_max": 140,
+        "acceleration": 59,
+        "braking": 280,
+        "corner_speed": 86,
+        "follow_distance": 90,
+        "corner_lookahead": 120,
+        "lane_offset": 65,
+        "turn_radius": 64
+      },
+      "sprites": [
+        "res://assets/sprites/delivery_van_blue.png",
+        "res://assets/sprites/delivery_van_blue_damage_1.png",
+        "res://assets/sprites/delivery_van_blue_damage_2.png",
+        "res://assets/sprites/delivery_van_blue_damage_3.png",
+        "res://assets/sprites/delivery_van_blue_damage_4.png"
+      ],
+      "draw_size": [
+        58,
+        148
+      ],
+      "collision_size": [
+        48,
+        134
+      ],
+      "reverse_speed": 115,
+      "reverse_acceleration": 95,
+      "braking": 340,
+      "coast_deceleration": 55,
+      "sidewalk_max_speed": 150,
+      "drift_grip": 2,
+      "handbrake_steering_rate": 1.4,
+      "steering_response_speed": 140,
+      "handbrake_deceleration": 190
+    },
+    {
+      "id": "delivery_van_orange",
+      "name": "FURGONETA EXPRESS",
+      "category": "delivery",
+      "description": "Reparto urgente con carrocería compacta.",
+      "max_speed": 425,
+      "acceleration": 185,
+      "grip": 8,
+      "max_health": 175,
+      "damage_multiplier": 0.78,
+      "steering_rate": 1.6099999999999999,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 106,
+        "cruise_max": 153,
+        "acceleration": 70,
+        "braking": 280,
+        "corner_speed": 94,
+        "follow_distance": 90,
+        "corner_lookahead": 120,
+        "lane_offset": 65,
+        "turn_radius": 64
+      },
+      "sprites": [
+        "res://assets/sprites/delivery_van_orange.png",
+        "res://assets/sprites/delivery_van_orange_damage_1.png",
+        "res://assets/sprites/delivery_van_orange_damage_2.png",
+        "res://assets/sprites/delivery_van_orange_damage_3.png",
+        "res://assets/sprites/delivery_van_orange_damage_4.png"
+      ],
+      "draw_size": [
+        58,
+        148
+      ],
+      "collision_size": [
+        48,
+        134
+      ],
+      "reverse_speed": 115,
+      "reverse_acceleration": 95,
+      "braking": 340,
+      "coast_deceleration": 55,
+      "sidewalk_max_speed": 150,
+      "drift_grip": 2,
+      "handbrake_steering_rate": 1.4,
+      "steering_response_speed": 140,
+      "handbrake_deceleration": 190
+    },
+    {
+      "id": "delivery_truck",
+      "name": "CAMIÓN DE PAQUETERÍA",
+      "category": "delivery",
+      "description": "Camión de reparto grande y resistente.",
+      "max_speed": 330,
+      "acceleration": 105,
+      "grip": 6,
+      "max_health": 320,
+      "damage_multiplier": 0.5,
+      "steering_rate": 1.47,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 82,
+        "cruise_max": 119,
+        "acceleration": 40,
+        "braking": 280,
+        "corner_speed": 73,
+        "follow_distance": 90,
+        "corner_lookahead": 120,
+        "lane_offset": 65,
+        "turn_radius": 64
+      },
+      "sprites": [
+        "res://assets/sprites/delivery_truck.png",
+        "res://assets/sprites/delivery_truck_damage_1.png",
+        "res://assets/sprites/delivery_truck_damage_2.png",
+        "res://assets/sprites/delivery_truck_damage_3.png",
+        "res://assets/sprites/delivery_truck_damage_4.png"
+      ],
+      "draw_size": [
+        58,
+        148
+      ],
+      "collision_size": [
+        48,
+        134
+      ],
+      "reverse_speed": 115,
+      "reverse_acceleration": 95,
+      "braking": 340,
+      "coast_deceleration": 55,
+      "sidewalk_max_speed": 150,
+      "drift_grip": 2,
+      "handbrake_steering_rate": 1.4,
+      "steering_response_speed": 140,
+      "handbrake_deceleration": 190
+    },
+    {
+      "id": "mail_van",
+      "name": "FURGÓN POSTAL",
+      "category": "delivery",
+      "description": "Vehículo postal de velocidad moderada.",
+      "max_speed": 380,
+      "acceleration": 140,
+      "grip": 8,
+      "max_health": 230,
+      "damage_multiplier": 0.65,
+      "steering_rate": 1.6099999999999999,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 95,
+        "cruise_max": 137,
+        "acceleration": 53,
+        "braking": 280,
+        "corner_speed": 84,
+        "follow_distance": 90,
+        "corner_lookahead": 120,
+        "lane_offset": 65,
+        "turn_radius": 64
+      },
+      "sprites": [
+        "res://assets/sprites/mail_van.png",
+        "res://assets/sprites/mail_van_damage_1.png",
+        "res://assets/sprites/mail_van_damage_2.png",
+        "res://assets/sprites/mail_van_damage_3.png",
+        "res://assets/sprites/mail_van_damage_4.png"
+      ],
+      "draw_size": [
+        58,
+        148
+      ],
+      "collision_size": [
+        48,
+        134
+      ],
+      "reverse_speed": 115,
+      "reverse_acceleration": 95,
+      "braking": 340,
+      "coast_deceleration": 55,
+      "sidewalk_max_speed": 150,
+      "drift_grip": 2,
+      "handbrake_steering_rate": 1.4,
+      "steering_response_speed": 140,
+      "handbrake_deceleration": 190
+    },
+    {
+      "id": "courier_compact",
+      "name": "REPARTIDOR URBANO",
+      "category": "delivery",
+      "description": "Coche pequeño para entregas rápidas.",
+      "max_speed": 460,
+      "acceleration": 280,
+      "grip": 13,
+      "max_health": 85,
+      "damage_multiplier": 1.0,
+      "steering_rate": 1.96,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 115,
+        "cruise_max": 166,
+        "acceleration": 106,
+        "braking": 360,
+        "corner_speed": 101
+      },
+      "sprites": [
+        "res://assets/sprites/courier_compact.png",
+        "res://assets/sprites/courier_compact_damage_1.png",
+        "res://assets/sprites/courier_compact_damage_2.png",
+        "res://assets/sprites/courier_compact_damage_3.png",
+        "res://assets/sprites/courier_compact_damage_4.png"
+      ]
+    },
+    {
+      "id": "sedan_black",
+      "name": "SEDÁN NEGRO",
+      "category": "sedan",
+      "description": "Berlina discreta, cómoda y estable.",
+      "max_speed": 525,
+      "acceleration": 220,
+      "grip": 12,
+      "max_health": 135,
+      "damage_multiplier": 0.9,
+      "steering_rate": 1.8900000000000001,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 131,
+        "cruise_max": 189,
+        "acceleration": 84,
+        "braking": 360,
+        "corner_speed": 116
+      },
+      "sprites": [
+        "res://assets/sprites/sedan_black.png",
+        "res://assets/sprites/sedan_black_damage_1.png",
+        "res://assets/sprites/sedan_black_damage_2.png",
+        "res://assets/sprites/sedan_black_damage_3.png",
+        "res://assets/sprites/sedan_black_damage_4.png"
+      ]
+    },
+    {
+      "id": "sedan_white",
+      "name": "SEDÁN BLANCO",
+      "category": "sedan",
+      "description": "Berlina ligera de uso cotidiano.",
+      "max_speed": 505,
+      "acceleration": 235,
+      "grip": 13,
+      "max_health": 105,
+      "damage_multiplier": 0.95,
+      "steering_rate": 1.96,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 126,
+        "cruise_max": 182,
+        "acceleration": 89,
+        "braking": 360,
+        "corner_speed": 111
+      },
+      "sprites": [
+        "res://assets/sprites/sedan_white.png",
+        "res://assets/sprites/sedan_white_damage_1.png",
+        "res://assets/sprites/sedan_white_damage_2.png",
+        "res://assets/sprites/sedan_white_damage_3.png",
+        "res://assets/sprites/sedan_white_damage_4.png"
+      ]
+    },
+    {
+      "id": "sedan_red",
+      "name": "SEDÁN ROJO",
+      "category": "sedan",
+      "description": "Berlina vivaz con respuesta rápida.",
+      "max_speed": 545,
+      "acceleration": 255,
+      "grip": 11,
+      "max_health": 110,
+      "damage_multiplier": 0.95,
+      "steering_rate": 1.82,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 136,
+        "cruise_max": 196,
+        "acceleration": 97,
+        "braking": 360,
+        "corner_speed": 120
+      },
+      "sprites": [
+        "res://assets/sprites/sedan_red.png",
+        "res://assets/sprites/sedan_red_damage_1.png",
+        "res://assets/sprites/sedan_red_damage_2.png",
+        "res://assets/sprites/sedan_red_damage_3.png",
+        "res://assets/sprites/sedan_red_damage_4.png"
+      ]
+    },
+    {
+      "id": "compact_blue",
+      "name": "COMPACTO AZUL",
+      "category": "compact",
+      "description": "Coche urbano ágil y fácil de maniobrar.",
+      "max_speed": 470,
+      "acceleration": 285,
+      "grip": 14,
+      "max_health": 85,
+      "damage_multiplier": 1.0,
+      "steering_rate": 2.0300000000000002,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 118,
+        "cruise_max": 169,
+        "acceleration": 108,
+        "braking": 360,
+        "corner_speed": 103
+      },
+      "sprites": [
+        "res://assets/sprites/compact_blue.png",
+        "res://assets/sprites/compact_blue_damage_1.png",
+        "res://assets/sprites/compact_blue_damage_2.png",
+        "res://assets/sprites/compact_blue_damage_3.png",
+        "res://assets/sprites/compact_blue_damage_4.png"
+      ]
+    },
+    {
+      "id": "compact_green",
+      "name": "COMPACTO VERDE",
+      "category": "compact",
+      "description": "Utilitario ligero de bajo peso.",
+      "max_speed": 450,
+      "acceleration": 275,
+      "grip": 15,
+      "max_health": 78,
+      "damage_multiplier": 1.05,
+      "steering_rate": 2.1,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 112,
+        "cruise_max": 162,
+        "acceleration": 104,
+        "braking": 360,
+        "corner_speed": 99
+      },
+      "sprites": [
+        "res://assets/sprites/compact_green.png",
+        "res://assets/sprites/compact_green_damage_1.png",
+        "res://assets/sprites/compact_green_damage_2.png",
+        "res://assets/sprites/compact_green_damage_3.png",
+        "res://assets/sprites/compact_green_damage_4.png"
+      ]
+    },
+    {
+      "id": "compact_white",
+      "name": "MINI BLANCO",
+      "category": "compact",
+      "description": "Mini coche ideal para calles estrechas.",
+      "max_speed": 420,
+      "acceleration": 260,
+      "grip": 16,
+      "max_health": 70,
+      "damage_multiplier": 1.1,
+      "steering_rate": 2.1,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 105,
+        "cruise_max": 151,
+        "acceleration": 99,
+        "braking": 360,
+        "corner_speed": 92
+      },
+      "sprites": [
+        "res://assets/sprites/compact_white.png",
+        "res://assets/sprites/compact_white_damage_1.png",
+        "res://assets/sprites/compact_white_damage_2.png",
+        "res://assets/sprites/compact_white_damage_3.png",
+        "res://assets/sprites/compact_white_damage_4.png"
+      ]
+    },
+    {
+      "id": "wagon_red",
+      "name": "FAMILIAR ROJO",
+      "category": "wagon",
+      "description": "Familiar espacioso y robusto.",
+      "max_speed": 460,
+      "acceleration": 185,
+      "grip": 10,
+      "max_health": 165,
+      "damage_multiplier": 0.78,
+      "steering_rate": 1.75,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 115,
+        "cruise_max": 166,
+        "acceleration": 70,
+        "braking": 360,
+        "corner_speed": 101
+      },
+      "sprites": [
+        "res://assets/sprites/wagon_red.png",
+        "res://assets/sprites/wagon_red_damage_1.png",
+        "res://assets/sprites/wagon_red_damage_2.png",
+        "res://assets/sprites/wagon_red_damage_3.png",
+        "res://assets/sprites/wagon_red_damage_4.png"
+      ]
+    },
+    {
+      "id": "wagon_blue",
+      "name": "FAMILIAR AZUL",
+      "category": "wagon",
+      "description": "Familiar equilibrado para carretera.",
+      "max_speed": 475,
+      "acceleration": 195,
+      "grip": 11,
+      "max_health": 150,
+      "damage_multiplier": 0.82,
+      "steering_rate": 1.82,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 119,
+        "cruise_max": 171,
+        "acceleration": 74,
+        "braking": 360,
+        "corner_speed": 104
+      },
+      "sprites": [
+        "res://assets/sprites/wagon_blue.png",
+        "res://assets/sprites/wagon_blue_damage_1.png",
+        "res://assets/sprites/wagon_blue_damage_2.png",
+        "res://assets/sprites/wagon_blue_damage_3.png",
+        "res://assets/sprites/wagon_blue_damage_4.png"
+      ]
+    },
+    {
+      "id": "suv_gray",
+      "name": "SUV GRIS",
+      "category": "suv",
+      "description": "Todoterreno urbano estable y resistente.",
+      "max_speed": 470,
+      "acceleration": 205,
+      "grip": 9,
+      "max_health": 190,
+      "damage_multiplier": 0.78,
+      "steering_rate": 1.68,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 118,
+        "cruise_max": 169,
+        "acceleration": 78,
+        "braking": 360,
+        "corner_speed": 103
+      },
+      "sprites": [
+        "res://assets/sprites/suv_gray.png",
+        "res://assets/sprites/suv_gray_damage_1.png",
+        "res://assets/sprites/suv_gray_damage_2.png",
+        "res://assets/sprites/suv_gray_damage_3.png",
+        "res://assets/sprites/suv_gray_damage_4.png"
+      ]
+    },
+    {
+      "id": "suv_red",
+      "name": "SUV ROJO",
+      "category": "suv",
+      "description": "SUV potente con aceleración moderada.",
+      "max_speed": 500,
+      "acceleration": 235,
+      "grip": 8,
+      "max_health": 175,
+      "damage_multiplier": 0.85,
+      "steering_rate": 1.6099999999999999,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 125,
+        "cruise_max": 180,
+        "acceleration": 89,
+        "braking": 360,
+        "corner_speed": 110
+      },
+      "sprites": [
+        "res://assets/sprites/suv_red.png",
+        "res://assets/sprites/suv_red_damage_1.png",
+        "res://assets/sprites/suv_red_damage_2.png",
+        "res://assets/sprites/suv_red_damage_3.png",
+        "res://assets/sprites/suv_red_damage_4.png"
+      ]
+    },
+    {
+      "id": "pickup_work",
+      "name": "PICKUP DE OBRA",
+      "category": "utility",
+      "description": "Camioneta de trabajo fuerte y lenta.",
+      "max_speed": 390,
+      "acceleration": 145,
+      "grip": 7,
+      "max_health": 250,
+      "damage_multiplier": 0.62,
+      "steering_rate": 1.54,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 98,
+        "cruise_max": 140,
+        "acceleration": 55,
+        "braking": 280,
+        "corner_speed": 86,
+        "follow_distance": 90,
+        "corner_lookahead": 120,
+        "lane_offset": 65,
+        "turn_radius": 64
+      },
+      "sprites": [
+        "res://assets/sprites/pickup_work.png",
+        "res://assets/sprites/pickup_work_damage_1.png",
+        "res://assets/sprites/pickup_work_damage_2.png",
+        "res://assets/sprites/pickup_work_damage_3.png",
+        "res://assets/sprites/pickup_work_damage_4.png"
+      ],
+      "draw_size": [
+        58,
+        148
+      ],
+      "collision_size": [
+        48,
+        134
+      ],
+      "reverse_speed": 115,
+      "reverse_acceleration": 95,
+      "braking": 340,
+      "coast_deceleration": 55,
+      "sidewalk_max_speed": 150,
+      "drift_grip": 2,
+      "handbrake_steering_rate": 1.4,
+      "steering_response_speed": 140,
+      "handbrake_deceleration": 190
+    },
+    {
+      "id": "utility_flatbed",
+      "name": "CAMIONETA DE CARGA",
+      "category": "utility",
+      "description": "Plataforma ligera para carga urbana.",
+      "max_speed": 365,
+      "acceleration": 130,
+      "grip": 7,
+      "max_health": 265,
+      "damage_multiplier": 0.6,
+      "steering_rate": 1.54,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 91,
+        "cruise_max": 131,
+        "acceleration": 49,
+        "braking": 280,
+        "corner_speed": 80,
+        "follow_distance": 90,
+        "corner_lookahead": 120,
+        "lane_offset": 65,
+        "turn_radius": 64
+      },
+      "sprites": [
+        "res://assets/sprites/utility_flatbed.png",
+        "res://assets/sprites/utility_flatbed_damage_1.png",
+        "res://assets/sprites/utility_flatbed_damage_2.png",
+        "res://assets/sprites/utility_flatbed_damage_3.png",
+        "res://assets/sprites/utility_flatbed_damage_4.png"
+      ],
+      "draw_size": [
+        58,
+        148
+      ],
+      "collision_size": [
+        48,
+        134
+      ],
+      "reverse_speed": 115,
+      "reverse_acceleration": 95,
+      "braking": 340,
+      "coast_deceleration": 55,
+      "sidewalk_max_speed": 150,
+      "drift_grip": 2,
+      "handbrake_steering_rate": 1.4,
+      "steering_response_speed": 140,
+      "handbrake_deceleration": 190
+    },
+    {
+      "id": "shuttle_bus",
+      "name": "MINIBÚS",
+      "category": "service",
+      "description": "Minibús de pasajeros, largo y pesado.",
+      "max_speed": 310,
+      "acceleration": 95,
+      "grip": 5.5,
+      "max_health": 330,
+      "damage_multiplier": 0.5,
+      "steering_rate": 1.435,
+      "ai": {
+        "spawn_weight": 2,
+        "cruise_min": 78,
+        "cruise_max": 112,
+        "acceleration": 36,
+        "braking": 280,
+        "corner_speed": 68,
+        "follow_distance": 90,
+        "corner_lookahead": 120,
+        "lane_offset": 65,
+        "turn_radius": 64
+      },
+      "sprites": [
+        "res://assets/sprites/shuttle_bus.png",
+        "res://assets/sprites/shuttle_bus_damage_1.png",
+        "res://assets/sprites/shuttle_bus_damage_2.png",
+        "res://assets/sprites/shuttle_bus_damage_3.png",
+        "res://assets/sprites/shuttle_bus_damage_4.png"
+      ],
+      "draw_size": [
+        58,
+        148
+      ],
+      "collision_size": [
+        48,
+        134
+      ],
+      "reverse_speed": 115,
+      "reverse_acceleration": 95,
+      "braking": 340,
+      "coast_deceleration": 55,
+      "sidewalk_max_speed": 150,
+      "drift_grip": 2,
+      "handbrake_steering_rate": 1.4,
+      "steering_response_speed": 140,
+      "handbrake_deceleration": 190
+    }
+  ]
+}

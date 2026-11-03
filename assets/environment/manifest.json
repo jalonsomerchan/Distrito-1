@@ -1,0 +1,113 @@
+{
+  "grass": {
+    "source": "environment_terrain.png",
+    "cell": 0,
+    "size": [
+      512,
+      512
+    ]
+  },
+  "dirt": {
+    "source": "environment_terrain.png",
+    "cell": 1,
+    "size": [
+      512,
+      512
+    ]
+  },
+  "water": {
+    "source": "environment_terrain.png",
+    "cell": 2,
+    "size": [
+      512,
+      512
+    ]
+  },
+  "stone": {
+    "source": "environment_terrain.png",
+    "cell": 3,
+    "size": [
+      512,
+      512
+    ]
+  },
+  "tree": {
+    "source": "environment_props.png",
+    "cell": 0,
+    "crop": [
+      30,
+      36,
+      595,
+      588
+    ],
+    "size": [
+      384,
+      375
+    ],
+    "edge_touch": false,
+    "alpha": true
+  },
+  "shrub": {
+    "source": "environment_props.png",
+    "cell": 1,
+    "crop": [
+      54,
+      158,
+      573,
+      505
+    ],
+    "size": [
+      384,
+      257
+    ],
+    "edge_touch": false,
+    "alpha": true
+  },
+  "rocks": {
+    "source": "environment_props.png",
+    "cell": 2,
+    "crop": [
+      82,
+      86,
+      548,
+      540
+    ],
+    "size": [
+      384,
+      374
+    ],
+    "edge_touch": false,
+    "alpha": true
+  },
+  "table": {
+    "source": "environment_props.png",
+    "cell": 3,
+    "crop": [
+      108,
+      96,
+      520,
+      540
+    ],
+    "size": [
+      356,
+      384
+    ],
+    "edge_touch": false,
+    "alpha": true
+  },
+  "bridge": {
+    "source": "environment_bridge.png",
+    "crop": [
+      37,
+      172,
+      2135,
+      552
+    ],
+    "size": [
+      1536,
+      278
+    ],
+    "alpha": true,
+    "edge_touch": false
+  }
+}

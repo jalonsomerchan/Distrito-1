@@ -1,0 +1,122 @@
+
+name: Publicar Steam Deck
+
+on:
+  push:
+    tags:
+      - "v*"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Compilar y publicar juego
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar proyecto
+        uses: actions/checkout@v4
+
+      - name: Instalar Godot
+        env:
+          GODOT_VERSION: "4.7.2"
+        run: |
+          set -e
+
+          wget -q \
+            "https://github.com/godotengine/godot-builds/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip"
+
+          unzip -q \
+            "Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip"
+
+          sudo install \
+            "Godot_v${GODOT_VERSION}-stable_linux.x86_64" \
+            /usr/local/bin/godot
+
+          wget -q \
+            "https://github.com/godotengine/godot-builds/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_export_templates.tpz"
+
+          mkdir -p \
+            "$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.stable"
+
+          unzip -q \
+            "Godot_v${GODOT_VERSION}-stable_export_templates.tpz" \
+            -d /tmp/godot-templates
+
+          cp /tmp/godot-templates/templates/* \
+            "$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.stable/"
+
+          godot --version
+
+      - name: Importar recursos del proyecto
+        run: |
+          godot --headless --path . --import
+
+      - name: Exportar juego para Steam Deck
+        run: |
+          set -e
+
+          mkdir -p build
+
+          godot --headless \
+            --path . \
+            --export-release "Linux" \
+            build/MiJuego.x86_64
+
+          test -s build/MiJuego.x86_64
+
+          chmod +x build/MiJuego.x86_64
+
+          echo "Exportación completada:"
+          ls -lah build/
+
+      - name: Empaquetar juego
+        run: |
+          set -e
+
+          cd build
+
+          zip -q -r ../steamdeck.zip .
+
+          cd ..
+
+          sha256sum steamdeck.zip > steamdeck.zip.sha256
+
+          echo "Archivos generados:"
+          ls -lah steamdeck.zip steamdeck.zip.sha256
+
+          echo "Verificando integridad:"
+          sha256sum -c steamdeck.zip.sha256
+
+      - name: Determinar versión
+        id: version
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          REF_NAME: ${{ github.ref_name }}
+          RUN_NUMBER: ${{ github.run_number }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            echo "tag=dev-${RUN_NUMBER}" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag=${REF_NAME}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publicar en GitHub Releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          set -e
+
+          gh release create "$RELEASE_TAG" \
+            steamdeck.zip \
+            steamdeck.zip.sha256 \
+            --target "$GITHUB_SHA" \
+            --title "$RELEASE_TAG" \
+            --generate-notes \
+            --latest
+
+          echo "Release publicada: $RELEASE_TAG"

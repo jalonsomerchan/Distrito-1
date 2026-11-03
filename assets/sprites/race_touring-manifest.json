@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/race_touring_sheet.png",
+  "shared_scale": 0.45751633986928103,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/race_touring.png",
+      "cell": 0,
+      "crop": [
+        81,
+        37,
+        387,
+        698
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_touring_damage_1.png",
+      "cell": 1,
+      "crop": [
+        74,
+        37,
+        379,
+        698
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_touring_damage_2.png",
+      "cell": 2,
+      "crop": [
+        65,
+        42,
+        371,
+        698
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_touring_damage_3.png",
+      "cell": 3,
+      "crop": [
+        56,
+        37,
+        362,
+        698
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_touring_damage_4.png",
+      "cell": 4,
+      "crop": [
+        49,
+        37,
+        354,
+        698
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

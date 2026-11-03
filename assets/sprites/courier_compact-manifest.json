@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/courier_compact_sheet.png",
+  "shared_scale": 0.4416403785488959,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/courier_compact.png",
+      "cell": 0,
+      "crop": [
+        82,
+        65,
+        398,
+        659
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/courier_compact_damage_1.png",
+      "cell": 1,
+      "crop": [
+        71,
+        65,
+        388,
+        659
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/courier_compact_damage_2.png",
+      "cell": 2,
+      "crop": [
+        60,
+        65,
+        377,
+        659
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/courier_compact_damage_3.png",
+      "cell": 3,
+      "crop": [
+        48,
+        65,
+        365,
+        659
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/courier_compact_damage_4.png",
+      "cell": 4,
+      "crop": [
+        38,
+        65,
+        354,
+        659
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

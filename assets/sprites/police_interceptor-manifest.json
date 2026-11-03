@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/police_interceptor_sheet.png",
+  "shared_scale": 0.46204620462046203,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/police_interceptor.png",
+      "cell": 0,
+      "crop": [
+        95,
+        39,
+        397,
+        687
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/police_interceptor_damage_1.png",
+      "cell": 1,
+      "crop": [
+        83,
+        39,
+        386,
+        687
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/police_interceptor_damage_2.png",
+      "cell": 2,
+      "crop": [
+        68,
+        39,
+        371,
+        687
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/police_interceptor_damage_3.png",
+      "cell": 3,
+      "crop": [
+        53,
+        39,
+        354,
+        687
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/police_interceptor_damage_4.png",
+      "cell": 4,
+      "crop": [
+        39,
+        39,
+        340,
+        687
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

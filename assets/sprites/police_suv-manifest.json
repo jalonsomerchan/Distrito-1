@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/police_suv_sheet.png",
+  "shared_scale": 0.44871794871794873,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/police_suv.png",
+      "cell": 0,
+      "crop": [
+        91,
+        27,
+        402,
+        695
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/police_suv_damage_1.png",
+      "cell": 1,
+      "crop": [
+        79,
+        27,
+        391,
+        695
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/police_suv_damage_2.png",
+      "cell": 2,
+      "crop": [
+        65,
+        28,
+        377,
+        695
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/police_suv_damage_3.png",
+      "cell": 3,
+      "crop": [
+        51,
+        28,
+        361,
+        695
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/police_suv_damage_4.png",
+      "cell": 4,
+      "crop": [
+        37,
+        28,
+        345,
+        690
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

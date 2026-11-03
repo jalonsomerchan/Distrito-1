@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/race_muscle_sheet.png",
+  "shared_scale": 0.45901639344262296,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/race_muscle.png",
+      "cell": 0,
+      "crop": [
+        87,
+        30,
+        392,
+        692
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_muscle_damage_1.png",
+      "cell": 1,
+      "crop": [
+        80,
+        33,
+        383,
+        692
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_muscle_damage_2.png",
+      "cell": 2,
+      "crop": [
+        69,
+        33,
+        372,
+        692
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_muscle_damage_3.png",
+      "cell": 3,
+      "crop": [
+        59,
+        33,
+        359,
+        692
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/race_muscle_damage_4.png",
+      "cell": 4,
+      "crop": [
+        48,
+        33,
+        349,
+        692
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

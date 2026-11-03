@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/truck_cargo_sheet.png",
+  "shared_scale": 0.5964912280701754,
+  "frame_size": [
+    174,
+    444
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/truck_cargo.png",
+      "cell": 0,
+      "crop": [
+        65,
+        40,
+        349,
+        759
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/truck_cargo_damage_1.png",
+      "cell": 1,
+      "crop": [
+        62,
+        36,
+        346,
+        759
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/truck_cargo_damage_2.png",
+      "cell": 2,
+      "crop": [
+        57,
+        38,
+        341,
+        759
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/truck_cargo_damage_3.png",
+      "cell": 3,
+      "crop": [
+        55,
+        40,
+        338,
+        759
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/truck_cargo_damage_4.png",
+      "cell": 4,
+      "crop": [
+        51,
+        49,
+        336,
+        759
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}

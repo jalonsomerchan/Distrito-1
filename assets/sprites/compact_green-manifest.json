@@ -1,0 +1,70 @@
+{
+  "source": "assets/raw/compact_green_sheet.png",
+  "shared_scale": 0.4117647058823529,
+  "frame_size": [
+    144,
+    336
+  ],
+  "frames": [
+    {
+      "path": "res://assets/sprites/compact_green.png",
+      "cell": 0,
+      "crop": [
+        59,
+        78,
+        398,
+        646
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/compact_green_damage_1.png",
+      "cell": 1,
+      "crop": [
+        53,
+        78,
+        392,
+        646
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/compact_green_damage_2.png",
+      "cell": 2,
+      "crop": [
+        46,
+        78,
+        386,
+        646
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/compact_green_damage_3.png",
+      "cell": 3,
+      "crop": [
+        40,
+        78,
+        380,
+        646
+      ],
+      "edge_touch": false,
+      "alpha": true
+    },
+    {
+      "path": "res://assets/sprites/compact_green_damage_4.png",
+      "cell": 4,
+      "crop": [
+        36,
+        78,
+        376,
+        646
+      ],
+      "edge_touch": false,
+      "alpha": true
+    }
+  ]
+}
